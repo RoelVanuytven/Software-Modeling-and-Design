@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>Requirements Analysis Quiz</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+            padding: 30px; /* Verhoogde padding */
+            width: 100%;
+            max-width: 900px; /* Verhoogde max-width */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.2rem; /* Grotere lettergrootte */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .question-container {
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.5rem; /* Grotere lettergrootte */
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .answer-container {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e8f4f8;
+            border-radius: 5px;
+            font-size: 1.1rem; /* Grotere lettergrootte */
+            line-height: 1.5;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-size: 1.1rem; /* Grotere lettergrootte */
+            width: calc(100% - 10px);
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .stats {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 5px;
+            font-size: 1rem; /* Grotere lettergrootte */
+        }
+
+        .progress {
+            margin-top: 10px;
+            background-color: #ddd;
+            border-radius: 5px;
+            height: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+        }
+
+        /* Responsive design voor verschillende schermgroottes */
+        @media screen and (min-width: 768px) {
+            .container {
+                padding: 40px; /* Verhoogde padding */
+            }
+
+            h1 {
+                font-size: 2.5rem; /* Grotere lettergrootte */
+            }
+
+            h2 {
+                font-size: 1.8rem; /* Grotere lettergrootte */
+            }
+
+            button {
+                width: auto;
+                margin: 10px;
+            }
+
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8rem; /* Grotere lettergrootte */
+            }
+
+            h2 {
+                font-size: 1.3rem; /* Grotere lettergrootte */
+            }
+
+            .answer-container {
+                padding: 10px;
+                font-size: 1rem; /* Grotere lettergrootte */
+            }
+
+            button {
+                padding: 10px 20px;
+                font-size: 1rem; /* Grotere lettergrootte */
+            }
+        }
+
+        /* Donkere modus ondersteuning */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #fff;
+            }
+
+            .container {
+                background-color: #333;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .answer-container {
+                background-color: #444;
+            }
+
+            .stats {
+                background-color: #3a3a3a;
+            }
+
+            h1, h2 {
+                color: #fff;
+            }
+
+            button {
+                background-color: #5cb85c;
+            }
+
+            button:hover {
+                background-color: #4cae4c;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Software Modeling and Design Quiz</h1>
+    <div class="question-container">
+        <h2 id="question"></h2>
+        <button onclick="showAnswer()">Toon Antwoord</button>
+    </div>
+    <div id="answer" class="answer-container"></div>
+    <button onclick="nextQuestion()">Volgende Vraag</button>
+    <div class="stats">
+        <p>Vragen: <span id="questionsStatus">0 van 0</span></p>
+        <p>Voortgang deze ronde: <span id="progress">0</span>%</p>
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "Wat zijn de drie categorieën van modules in Requirement Analysis?",
+            answer: "<ul><li>A-modules</li><li>B-modules</li><li>C-modules</li></ul>"
+        },
+        {
+            question: "A-modules",
+            answer: "Technieken voor het definiëren van functionele en niet-functionele vereisten en het ontwerpen van een applicatie"
+        },
+        {
+            question: "B-modules",
+            answer: "Geavanceerde datamodellering"
+        },
+        {
+            question: "C-modules",
+            answer: "OO-modellering met UML"
+        },
+        {
+            question: "Wat vertegenwoordigt een requirement in een Information System?",
+            answer: "Een behoefte die het Information System moet vervullen, zoals <br>Functionaliteiten, <br>Niet-functionele vereisten of <br>Omgevingsgebonden beperkingen (bijvoorbeeld juridische restricties)."
+        },
+        {
+            question: "Wat is een functioneel requirement?",
+            answer: "Een vereiste die beschrijft wat de software of component moet doen. Het proces is iteratief."
+        },
+        {
+            question: "Wat is een case model?",
+            answer: "Een tool om functionele vereisten te bepalen tijdens de analyse en het ontwerp, die ook dient als basis voor testen, communicatie tussen betrokkenen en documentatie."
+        },
+        {
+            question: "Wat bevat een case model?",
+            answer: "Een use case diagram met meerdere use cases en use case beschrijvingen."
+        },
+        {
+            question: "Wat is een systeemgrens in een case model?",
+            answer: "Een rechthoek met de naam van het systeem binnen of boven de rechthoek, wat het startpunt van de requirements analyse aangeeft."
+        },
+        {
+            question: "Wat is een actor in een use case diagram?",
+            answer: "Een entiteit buiten het systeem die het systeem gebruikt of ermee communiceert. Een actor is altijd een rol, geen naam, en kan een persoon, organisatie of systeem zijn. (Start met hoofdletter)"
+        },
+        {
+            question: "Wat is een use case?",
+            answer: "Een 'case' waarvoor een actor het systeem wil gebruiken, een doel dat één of meerdere actoren met het systeem willen bereiken. werkwoord + zelfstandig naamwoord (vb. Enter Order)"
+        },
+        {
+            question: "Wat is het verschil tussen een brief, casual en fully dressed use case?",
+            answer: "<li>Brief use case 1 alinea die de use case samenvat.</li><li>Casual use case: Meerdere alinea's die de use case samenvatten.</li><li>Fully dressed use case: Een formeel document met een gedetailleerde structuur en velden voor verschillende secties.</li>"
+        },
+        {
+            question: "Hoe beschrijf je functionaliteit in een casual use case?",
+            answer: "In de vorm van een user story, bijvoorbeeld: \"Als student kan ik me inschrijven voor een college.\""
+        },
+        {
+            question: "Wat beschrijf je in het \"Normal flow\" gedeelte van een use case?",
+            answer: "Het successcenario waarbij wordt beschreven wat de actor en het systeem doen na het kiezen van de functionaliteit."
+        },
+        {
+            question: "Wat beschrijf je in het \"Alternatives\" gedeelte van een use case?",
+            answer: "Alternatieve scenario's die kunnen optreden, waarbij voor elk alternatief 1 paragraaf wordt gebruikt."
+        },
+        {
+            question: "Wat zijn de twee hoofdtypes van vereisten in requirements analysis?",
+            answer: "<li>Functioneel: Wat de gebruiker wil dat het systeem doet.</li><li>Niet-functioneel: Voorwaarden waaronder de functionaliteiten moeten worden aangeboden, zoals prijs, installatievoorwaarden, beveiliging en prestaties.</li>"
+        },
+        {
+            question: "Wat is de rol van een use case diagram?",
+            answer: "Het geeft een overzicht van de functionele vereisten (use cases) voor elke type gebruiker en toont de interacties tussen de actoren en het systeem."
+        },
+        {
+            question: "Wat zijn preconditions in een use case?",
+            answer: "Voorwaarden die moeten worden vervuld voordat een actor de functionaliteit kan gebruiken, zoals inloggen in het systeem."
+        },
+        {
+            question: "Hoe beschrijf je een alternatieve stroom in een use case?",
+            answer: "Je beschrijft alternatieve scenario's die kunnen optreden, elk met een korte naam en een beschrijving van wat er anders is dan het normale verloop."
+        },
+        {
+            question: "Wat zijn de kenmerken van een fully dressed use case?",
+            answer: "Het is een formeel document met een gedetailleerde structuur en velden voor verschillende secties, vaak gebruikt in grote en kritische projecten."
+        },
+        {
+            question: "Wat is het belang van het iteratieve proces in requirements analysis?",
+            answer: "Het stelt ontwikkelaars in staat om gedurende de tijd meer vereisten te ontdekken en te verfijnen naarmate het project vordert, waardoor de kwaliteit en volledigheid van het eindproduct worden verbeterd."
+        },
+        {
+            question: "Wat zijn de interacties tussen actor en systeem in een use case?",
+            answer: "Dit zijn de afwisselende acties en reacties tussen de actor en het systeem, waarbij de actor acties onderneemt en het systeem daarop reageert zonder interne implementatiedetails te onthullen."
+        },
+        {
+            question: "Wat zijn enkele voorbeelden van technische foutcontroles die niet in use case beschrijvingen moeten worden opgenomen?",
+            answer: "<li>Datum formaat fout</li><li>Verkeerde invoer van tekst in plaats van een nummer</li><li>Niet ingevulde verplichte velden</li>"
+        },
+        {
+            question: "Hoe beïnvloeden juridische restricties de requirements analysis?",
+            answer: "Juridische restricties zijn omgevingsgebonden vereisten die bepalen wat het systeem moet respecteren of naleven, wat van invloed kan zijn op de functionele en niet-functionele vereisten van het systeem."
+        },
+        {
+            question: "Waarom is documentatie belangrijk in het requirements analysis proces?",
+            answer: "Documentatie biedt een basis voor communicatie tussen alle betrokken partijen, dient als referentie tijdens de ontwikkeling en testing, en helpt bij het vastleggen van de beslissingen en vereisten gedurende het project."
+        },
+        {
+            question: "Wat zijn de twee types van actors?",
+            answer: "Actieve actor<br>Passieve actor"
+        },
+        {
+            question: "Actieve actor",
+            answer: "Start de communicatie en begint een use case (bijvoorbeeld: Student of Docent aan de linkerkant van het model)."
+        },
+        {
+            question: "Passieve actor",
+            answer: "Het systeem start de communicatie en neemt deel (bijvoorbeeld: mailbox van de student aan de rechterkant van het model)."
+        },
+        {
+            question: "Wat betekent het wanneer een actor iets erft in de context van requirements analysis? (inheritance)",
+            answer: "De actor die erft kan ALLES doen wat de actor waarvan geërfd wordt kan doen.<img src=/Resources/Inheritance.JPG alt='inheritance'>"
+        },
+        {
+            question: "Wat is de betekenis van \"extend\" in een use case?",
+            answer: "Het geeft aan dat extra gedrag wordt toegevoegd aan het gedrag van een use case. Dit extra gedrag wordt optioneel geïmplementeerd en gemodelleerd in een nieuwe use case. In het diagram wordt dit aangegeven door een onderbroken pijl met de stereotype <<extend>>.<img src=\"Extend.JPG\">"
+        },
+        {
+            question: "Wat betekent \"include\" in een use case?",
+            answer: "Het geeft aan dat deze use case gebruikmaakt van een andere use case, waardoor het gedrag van de eerste use case verandert. Dit extra gedrag wordt altijd uitgevoerd en is essentieel voor het succes van de eerste use case.<img src=/Resources/Include.JPG alt='include'>"
+        },
+        {
+            question: "Hoe ziet de benaming van een Use-case er uit",
+            answer: "einddoel, niet de apparte stappen werkwoord + zelstandig naamwoord, start met hoofdletter"
+        },
+        {
+            question: "Veel gemaakte fouten in Use case description",
+            answer: "- Beschrijf hoe het gedraagd, niet hoe het gestructureerd is<br>- Beschrijf events, geen user interface zoals buttons, dropdowns,...<br>- Beschrijft interacties tussen actoren en systeem, niet tussen actoren onderling<br>- Geen technische error checks"
+        },
+        {
+            question: "Waar en hoe wordt de extend beschreven in de use case diagram?",
+            answer: "In de use case waar de extend aan vast hangt komt een extra lijntje bij alternatieve trajecten waar dan de beschrijving bij staat als de gebruiker,..schakelt het systeem over naar de use case \"...\", voor deze extand use case wordt dan een apparte use case description gemaakt die uitlegt wat die doet zoals bij een gewone use case."
+        },
+        {
+            question: "Waar en hoe wordt de include beschreven in de use case diagram?",
+            answer: "Bij de hoofd Use Case waar de include bij hoort wordt in de Normal flow op het correcte moment in het process vermeld: The system switches to the use case \"...\" en gaat dan verder met wat er na deze stap gebeurt in de use case. Er is een apparte use case description die de Include Use case uitlegd"
+        },
+        {
+            question: "Welke niveaus van use cases zijn er?",
+            answer: "1 Cloud/wolk<br>2 Kite/vlieger<br>3 Sea/zee<br>4 Fish/vis<br>5 Clam/schelp<br><img src=/Resources/Levels%20of%20use%20cases.JPG alt='Levels Of Use Case'>"
+        },
+        {
+            question: "Cloud Level use case",
+            answer: "Gebruiksscenario's op dit hoogste niveau vertegenwoordigen vaak groepen onderling verbonden bedrijfsprocessen, zoals het Verkopen van Producten."
+        },
+        {
+            question: "Kite Level use cases",
+            answer: "Op dit tweede niveau worden individuele bedrijfsprocessen meestal gepost, vaak gericht op workflows."
+        },
+        {
+            question: "Sea Level use cases",
+            answer: "Dit is het niveau dat ertoe doet, en dat ook het Wijzigen van Adres omvat, bijvoorbeeld. Gebruiksscenario's op zeeniveau vertegenwoordigen de interactie tussen een gebruiker en een systeem. Het resultaat van zo'n gebruiksscenario vervult een doelstelling van het systeem. De tijd die nodig is om zo'n gebruiksscenario te verwerken, varieert doorgaans van enkele minuten tot een half uur."
+        },
+        {
+            question: "Fish Level use cases",
+            answer: "Gebruiksscenario's op Fish-niveau worden gebruikt om zelfstandige functionaliteit te modelleren die Sea-niveau ondersteunt. Denk bijvoorbeeld aan Abonnement Ophalen of Product Selecteren."
+        },
+        {
+            question: "Clam Level use cases",
+            answer: "Soms modelleren projecten te ver vooruit, en worden de gebruiksscenario's te klein. Dit wordt Clam-niveau genoemd."
+        },
+        {
+            question: "Kiss principe",
+            answer: `
+    <ul>
+      <li>Keep it simple, stupid...</li>
+      <li>Keep it short and simple</li>
+      <li>Keep it simple & straightforward</li>
+      <li>Keep it smart & simple</li>
+      <li>Communication</li>
+      <li>Maintainability</li>
+      <li>Frames in agile software development: "baby steps"...</li>
+    </ul>
+  `
+        },
+        {
+            question: "Wat zijn secundaire use cases?",
+            answer: "Secundaire use cases ondersteunen de primaire use cases. Ze bieden functionaliteiten die nodig zijn om de hoofdfunctionaliteiten mogelijk te maken, zoals \"Login\" of \"Activate login\"."
+        },
+        {
+            question: "Wat zijn primaire use cases?",
+            answer: "Primaire use cases zijn de meest belangrijke taken die het systeem moet uitvoeren voor de actor. Ze vervullen een gebruikersdoel, ondersteunen een taak die zelfstandig staat, is compleet en kan in één sessie met het systeem worden voltooid."
+        },
+        {
+            question: "Hoe worden secundaire use cases weergegeven in een use case diagram?",
+            answer: "In het use case diagram staan secundaire use cases tussen de primaire use cases. Na het voltooien van het diagram is er geen onderscheid meer zichtbaar tussen primaire en secundaire use cases."
+        },
+        {
+            question: "Wanneer worden secundaire use cases gecreëerd tijdens het analyseproces?",
+            answer: "Tijdens het analyseproces worden eerst de primaire use cases gemaakt en pas daarna de secundaire use cases."
+        },
+        {
+            question: "Wat gebeurt er als een docent een evaluatiecriterium wil verwijderen dat al gebruikt is in evaluaties?",
+            answer: "Het evaluatiecriterium wordt niet verwijderd, maar de status wordt op \"inactive\" gezet."
+        },
+        {
+            question: "Wat is een oplossing voor het omgaan met historische data in het systeem?",
+            answer: "Toon alleen de huidige of actieve data bij het ondersteunen van nieuwe procesuitvoeringen, gebaseerd op datum of status.<br>Historische data wordt niet gewist omdat het altijd nog nuttig kan zijn, het wordt op inactief gezet in plaats van gewist"
+        },
+        {
+            question: "Wat is prototyping?",
+            answer: "Prototyping is het proces van het maken van prototypes, die experimentele en incomplete ontwerpen zijn die snel en goedkoop ontwikkeld kunnen worden."
+        },
+        {
+            question: "Wat zijn de belangrijkste kenmerken van een prototype?",
+            answer: "Prototypes zijn experimenteel, incompleet, kunnen snel worden ontwikkeld en zijn relatief goedkoop."
+        },
+        {
+            question: "Wat is het primaire doel van prototyping?",
+            answer: "Het visualiseren van visies en ideeën om waardevolle gebruikersfeedback te verkrijgen op een ontwerp."
+        },
+        {
+            question: "Geef een voorbeeld van hoe prototyping wordt toegepast bij het ontwerpen van een applicatie.",
+            answer: "Bij het ontwerpen van een applicatie kan prototyping worden toegepast door schermontwerpen te maken die de gebruikersinterface weergeven."
+        },
+        {
+            question: "Wat zijn de voordelen van prototyping?",
+            answer: "<li>Stimuleert vroege feedback.</li><li>Vermindert het risico op grote wijzigingen achteraf, die aanzienlijk duurder zijn.</li><li>Verhoogt het aantal iteraties, wat leidt tot regelmatige verbeteringen en een risicoreducerend effect heeft.</li>"
+        },
+        {
+            question: "Hoe draagt prototyping bij aan het verminderen van risico's in het ontwerpproces?",
+            answer: "Door het aantal iteraties te verhogen, wat leidt tot regelmatige verbeteringen en het tijdig identificeren en oplossen van problemen."
+        },
+        {
+            question: "Waarom is vroege feedback essentieel in het prototypingproces?",
+            answer: "Vroege feedback helpt om ontwerpfouten vroeg te identificeren en aan te passen voordat ze kostbaar worden om te corrigeren."
+        },
+        {
+            question: "Wat zijn de drie hoofdtypen prototypes?",
+            answer: "Low-fidelity (LO-FI)<br>Medium-fidelity (ME-FI) <br>High-fidelity (HI-FI)"
+        },
+        {
+            question: "Beschrijf een Low-Fidelity prototype.",
+            answer: "Een LO-FI prototype schetst de algemene structuur van de gebruikersinterface, met focus op schermindeling en ontwerpconcepten, zonder aandacht voor details zoals kleur of lettertype"
+        },
+        {
+            question: "Wat onderscheidt een Medium-Fidelity prototype van een Low-Fidelity prototype?",
+            answer: "Een ME-FI prototype is geavanceerder, wordt op de computer gemaakt en kan verschillende benaderingen hebben, zoals verticale, horizontale en scenario-gebaseerde prototyping."
+        },
+        {
+            question: "Welke drie benaderingen zijn mogelijk binnen Medium-Fidelity prototyping?",
+            answer: "Verticale prototyping (beperkt aantal functies met diepgaande functionaliteit), horizontale prototyping (volledige gebruikersinterface zonder functionaliteit),&nbsp; scenario-gebaseerde prototyping (beperkt aantal functies en functionaliteit)."
+        },
+        {
+            question: "Wat zijn de kenmerken van een High-Fidelity prototype?",
+            answer: "HI-FI prototypes gebruiken materiaal dat vergelijkbaar of identiek is aan het eindproduct, zijn visueel zeer compleet en interactief, wat gebruikers kan misleiden om te denken dat er al een volledig functionerend systeem is."
+        },
+        {
+            question: "Wat zijn de voordelen van Low-Fidelity prototypes?",
+            answer: "<li>Snel en goedkoop te maken.</li><li>Ondersteund natuurlijke vorm van communicatie tussen stakeholders</li><li>Kan makkelijk elk moment aangemaakt worden.</li><li>Focus op belangrijke elementen zoals structuur.</li><li>Geen speciale kennis vereist.</li><li>Bevordert samenwerking</li>"
+        },
+        {
+            question: "Wat zijn de nadelen van Low-Fidelity prototypes?",
+            answer: "<li>Niet interactief.</li><li>Geen functionaliteit (beperkingen in flow en navigatie).<br></li><li>Niet mogelijk te kopieren</li><li>Moeilijk om aanpassingen te maken</li><li>Geen ontwerpgeheugen</li><li>Geen mogelijkheid tot codegeneratie.</li>"
+        },
+        {
+            question: "Wat zijn de voordelen van Medium-Fidelity prototypes?",
+            answer: "- Interactief<br>- bruikbaar voor testen en evaluaties<br>- bruikbaar als marketingtool"
+        },
+        {
+            question: "Wat zijn de nadelen van Medium-Fidelity prototypes?",
+            answer: "- Hogere ontwikkelkosten (tijd)<br>- Focus op details<br>- Geen codegeneratie"
+        },
+        {
+            question: "Wat zijn de voordelen van High-Fidelity prototypes?",
+            answer: "<li>Volledige weergave van de User Interface</li><li>Interactief en bruikbaar voor tests en evaluaties.</li><li>Kan code genereren of andere weergaven</li><li>Kan als marketingtool worden gebruikt.</li><li>Layout-eigenschappen kunnen gemakkelijk worden gedefinieerd.</li>"
+        },
+        {
+            question: "Wat zijn de nadelen van High-Fidelity prototypes?",
+            answer: "<li>Gedrag moeilijk te specifieren</li><li>Hogere ontwikkelingskosten en meer tijd nodig om te ontwikkelen.</li><li>Vereist kennis van programmeren of scripting.<br></li><li>Geen natuurlijke interactie mogelijk</li><li>Kan gebruikers misleiden om te denken dat het prototype het echte product is.</li><li>Focus op details kan gebruikers \"blind\" maken voor andere aspecten.</li>"
+        },
+        {
+            question: "Wat is een storyboard in de context van prototyping?",
+            answer: "Een storyboard bestaat uit snapshots van de interface op sleutelpunten in de interactie, vaak gecombineerd met een geschreven scenario om te laten zien hoe de gebruiker een taak kan uitvoeren."
+        },
+        {
+            question: "Wat is het Wizard of Oz-prototypingmodel?",
+            answer: "Het Wizard of Oz-model houdt in dat mensen het systeem simuleren en interageren met de gebruiker, waarbij de gebruikersinterface op een geloofwaardige manier reageert op gebruikersinput."
+        },
+        {
+            question: "Website kenmerken",
+            answer: "<li>Bevat inhoud zoals teksten, afbeeldingen en video's.</li><li>Stimuleren van browsen en zoeken.</li><li>Aantrekken en behouden van bezoekers.</li><li>Bevat vaak veel tekst en informatie over verschillende onderwerpen.</li>"
+        },
+        {
+            question: "Webapplicatie kenmerken",
+            answer: "<li>Bevat taakgerichte formulieren en functionaliteiten.</li><li>Faciliteren van snelle en gemakkelijke methoden voor specifieke taken.</li><li>Bevat zeer weinig tekst en richt zich op gebruikersinteracties.</li>"
+        },
+        {
+            question: "aspecten website",
+            answer: "<li>Inhoud: Welke informatie is nodig en welke onderwerpen worden behandeld.</li><li>Navigatie: Hoofd- en subthema's, lineaire en frequente taken, gerelateerde onderwerpen via hyperlinks.</li><li>Gebruikersondersteuning: Welke hulp hebben gebruikers nodig en hoe worden de taken georganiseerd.</li>"
+        },
+        {
+            question: "aspecten webapplicatie",
+            answer: "<li>Taakgerichte formulieren: Specifieke acties en functionaliteiten die gebruikers uitvoeren.</li><li>Navigatie: Snelle navigatie tussen formulieren, unieke paginatitels.</li><li>Gebruikersondersteuning: Contextgevoelige hulp, systeemmeldingen, en links naar meer informatie.</li>"
+        },
+        {
+            question: "Navigatie en Gebruikersinterface Website",
+            answer: "<li>Bezochte links kunnen verschillende kleuren hebben.</li><li>Gebruik van frames en grotere, minder frequente pagina's.</li><li>Unieke paginatitels per pagina.</li><li>Aanbeveling: Gebruik hyperlinks om snelle navigatie tussen gerelateerde onderwerpen te ondersteunen</li>"
+        },
+        {
+            question: "Navigatie en Gebruikersinterface Webapplicatie",
+            answer: "<li>Links hebben dezelfde kleur voor consistentie.</li><li>Snelle navigatie tussen verschillende formulieren met consistente paginatitels.</li><li>Aanbeveling: Ondersteunt snelle navigatie tussen formulieren en zorgt voor consistentie in de gebruikerservaring.</li>"
+        },
+        {
+            question: "Usability Testing en Browserondersteuning Website",
+            answer: "<li>Scrollen door een klein aantal grote pagina's.</li><li>Ondersteuning van verschillende browsers met vrijheid van keuze voor gebruikers.</li><li>Gebruik van pulldown navigatiemenu's om SNAFU (System not a Friendly User) situaties te voorkomen.</li>"
+        },
+        {
+            question: "Usability Testing en Browserondersteuning Webapplicatie",
+            answer: "<li>Scrollen door een groot aantal kleine pagina's.</li><li>Ondersteuning van alle browsers met alternatieve oplossingen voor onverwachte resultaten.</li><li>Gebruik van browserknoppen en navigatiemogelijkheden om de gebruikersvrijheid te waarborgen.</li>"
+        },
+        {
+            question: "Home Page Website",
+            answer: "<li>Beschrijving van verschillende inhoudsgebieden en het hoofdmenu.</li><li>Mogelijkheid tot het weergeven van nieuwe verhalen, productoverzichten, en advertentie-inhoud.</li><li>Overweeg downloadtijd, gemakkelijke navigatie en het doel van de website bij het beslissen over de aanwezigheid en inhoud van de homepagina.</li>"
+        },
+        {
+            question: "Home Page Webapplicatie",
+            answer: "<li>Kan bestaan uit niets of geen specifieke homepagina.</li><li>Focus op directe toegang tot functionaliteiten zonder een informatieve homepagina.</li>"
+        },
+        {
+            question: "Help en Ondersteuning Website",
+            answer: "<li>Bevat FAQ's, traditionele online hulp, welkom/overzicht, over de applicatie, site map.</li><li>Bied contextgevoelige hulp en systeemmeldingen.</li><li>Links naar meer informatie over het gebruik van de website.</li>"
+        },
+        {
+            question: "Help en Ondersteuning Webapplicatie",
+            answer: "Vergelijkbare ondersteuning met nadruk op contextgevoelige hulp en systeemmeldingen om gebruikers effectief te begeleiden bij het uitvoeren van taken."
+        },
+        {
+            question: "Doel en gebruikersbehoeften website",
+            answer: "Voor informatieve en marketingdoeleinden.<br>Aantrekken en informeren van bezoekers."
+        },
+        {
+            question: "Doel en gebruikersbehoeften Webapplicatie",
+            answer: "Interactieve taken en gebruikersinteracties.<br>Faciliteren van specifieke gebruikersacties en taken"
+        },
+        {
+            question: "Wat is de MoSCoW-methode?",
+            answer: "De MoSCoW-methode is een techniek om de vereisten van een project te prioriteren. Hierbij worden de vereisten ingedeeld en toegewezen met de letters M, S, C of W."
+        },
+        {
+            question: "Waar staat elke letter in MoSCoW voor?",
+            answer: "<li>M: Must have</li><li>S: Should have</li><li>C: Could have</li><li>W: Would like to have but won't this time</li>"
+        },
+        {
+            question: "Must have this",
+            answer: "Deze vereiste moet in het eindresultaat aanwezig zijn voor het succes van het project."
+        },
+        {
+            question: "Should have this if at all possible",
+            answer: "Deze vereiste is zeer wenselijk of een equivalente oplossing is minimaal acceptabel."
+        },
+        {
+            question: "Could have this if it does not affect anything else",
+            answer: "Deze vereiste kan worden aangepakt als de belangrijkere vereisten niet in het gedrang komen; het zijn nice-to-have functies."
+        },
+        {
+            question: "Would like to have but won't have this time around",
+            answer: "Deze vereiste valt buiten de scope van het huidige project, maar kan een idee zijn voor een toekomstig project."
+        },
+        {
+            question: "Waarom is het belangrijk om vereisten te prioriteren in een project?",
+            answer: "Het prioriteren van vereisten helpt bij het focussen op de meest essentiële onderdelen die nodig zijn voor het succes van het project, vooral wanneer middelen beperkt zijn."
+        },
+        {
+            question: "Wat zijn niet-functionele vereisten?",
+            answer: "Niet-functionele vereisten beschrijven hoe het systeem moet zijn en onder welke voorwaarden de functionele vereisten moeten worden geïmplementeerd. Ze omvatten zaken als kwaliteitscriteria, beperkingen en prestatie-eisen, en kwantificeren minimum-, maximum- en verwachte waarden."
+        },
+        {
+            question: "Wat is het verschil tussen functionele en niet-functionele vereisten?",
+            answer: "Functionele vereisten beschrijven wat het systeem moet doen, zoals specifieke functies of gedragingen. Niet-functionele vereisten beschrijven hoe het systeem moet zijn, inclusief kwaliteitscriteria en operationele voorwaarden."
+        },
+        {
+            question: "Welke vier categorieën van niet-functionele vereisten worden besproken?",
+            answer: "<li>Implementatie</li><li>Externe Interface</li><li>Prestatie</li><li>Kwaliteitsvereisten</li>"
+        },
+        {
+            question: "Wat omvatten implementatievereisten?",
+            answer: "Implementatievereisten beschrijven de beperkingen op het gebied van ontwerp en implementatie, zoals gebruikte hardware/systemsoftware, programmeertaal, framework, type en specifieke database (bijv. MySQL, Oracle), en kenmerken van ontwikkelings- en productieplatforms."
+        },
+        {
+            question: "Wat zijn externe interfacevereisten?",
+            answer: "Externe interfacevereisten specificeren of het systeem moet interfacing met externe systemen en, indien ja:<li>Welke input van andere hardware/software systemen nodig is.</li><li>Welke output naar andere hardware/software systemen wordt geleverd.</li><li>Beperkingen op het formaat voor input en output (bijv. API, bestandsformaat).</li><li>Beperkingen op het medium voor input en output (bijv. internet, kabel).</li></ul>"
+        },
+        {
+            question: "Wat zijn prestatievereisten?",
+            answer: "<li>Reactietijden: Hoe snel het systeem moet reageren op specifieke gebeurtenissen, inclusief minimale, maximale en verwachte vertragingen.</li><li>Schaalbaarheid: Het aantal gelijktijdige acties dat normaal moet kunnen plaatsvinden en hoe het systeem reageert als er meer acties zijn dan gepland.</li>"
+        },
+        {
+            question: "Kwaliteitsvereisten voor software omvatten:",
+            answer: "<li>Beveiliging: Garanderen van de vertrouwelijkheid, integriteit en beschikbaarheid (CIA) van informatie, en specificeren wat het systeem niet moet doen.</li><li>Gebruiksvriendelijkheid: Human factors, ondersteuning voor gehandicapten, gebruiksvriendelijkheid zoals sneltoetsen, menu's, muisgebruik, grotere lettertypen, en beschikbare hulp zoals contextgevoelige hulp, tutorials en gebruikershandleidingen.</li>"
+        },
+        {
+            question: "Kwaliteitsvereisten voor hardware omvatten:",
+            answer: "<li>Robuustheid: De mate van duurzaamheid en betrouwbaarheid.</li><li>Afmetingen en Gewicht: Specifieke eisen met betrekking tot grootte en gewicht.</li><li>Brandbaarheid: Eisen omtrent de brandveiligheid.</li><li>...</li>"
+        },
+        {
+            question: "Wat staat er op de checklist voor niet-functionele vereisten?",
+            answer: "<li>Implementatie</li><li>Externe Interface</li><li>Prestatie</li><li>Kwaliteitsvereisten</li>"
+        },
+        {
+            question: "Wat zijn de laatste overwegingen met betrekking tot niet-functionele vereisten?",
+            answer: "<li>Er kunnen veel andere niet-functionele vereisten relevant zijn, zoals verpakking, juridische eisen, gebruikersondersteuning, internationalisatie (beschikbaarheid in andere talen), enz.</li><li>Beschrijf alleen die niet-functionele vereisten die relevant zijn voor jouw project.</li><li>Traditioneel behoren niet-functionele vereisten tot het INFRA-domein en worden ze vaak onderschat of te laat overwogen door applicatieteams.</li>"
+        },
+        {
+            question: "Wat is een Weighted Decision Matrix?",
+            answer: "Een Weighted Decision Matrix = techniek om op een objectieve manier een keuze te maken tussen verschillende vergelijkbare oplossingen. <br>Scoresysteem: betrokken factoren worden gewogen => belangrijkheid ten opzichte van elkaar relatief gemaakt."
+        },
+        {
+            question: "Wat zijn de stappen in de aanpak van een Weighted Decision Matrix?",
+            answer: "<li>1 Schrijf de beslissing op die genomen moet worden.</li><li>2 Bepaal welke factoren in overweging moeten worden genomen.</li><li>3 Weeg het belang van de factoren ten opzichte van elkaar.</li><li>4 Lijst alle mogelijke opties op waaruit gekozen moet worden.</li><li>5 Gebruik de matrix om elke optie te scoren tegen elke factor en motiveer de scores.</li><li>6 Bereken de totale score voor elke optie.</li><li>7 Formuleer een conclusie op basis van de totaalscores.</li>"
+        },
+        {
+            question: "Example Weighted Decision Matrix",
+            answer: "<img src=/Resources/Weighted%20Decision%20Matrix.JPG alt='Weighted Decision Matrix'>"
+        }
+    ];
+
+    let askedQuestions = new Map();
+    let currentQuestionIndex;
+    let questionsAnswered = 0;
+
+    function initializeQuestions() {
+        questions.forEach((_, index) => askedQuestions.set(index, 0));
+        document.getElementById('questionsStatus').textContent = `0 van ${questions.length}`;
+        nextQuestion();
+    }
+
+    function selectNextQuestion() {
+        const minAsked = Math.min(...Array.from(askedQuestions.values()));
+        const eligibleQuestions = Array.from(askedQuestions.entries())
+            .filter(([_, count]) => count === minAsked);
+        return eligibleQuestions[Math.floor(Math.random() * eligibleQuestions.length)][0];
+    }
+
+    function showAnswer() {
+        const answerElement = document.getElementById('answer');
+        answerElement.style.display = 'block';
+        answerElement.innerHTML = questions[currentQuestionIndex].answer; // Use innerHTML instead of textContent
+    }
+
+    function updateProgress() {
+      const minAsked = Math.min(...Array.from(askedQuestions.values()));
+      const currentRoundQuestions = Array.from(askedQuestions.values())
+              .filter(count => count === minAsked + 1).length;
+      const progress = (currentRoundQuestions / questions.length) * 100;
+
+      document.getElementById('progress').textContent = Math.round(progress);
+      document.getElementById('progressBar').style.width = progress + '%';
+    }
+
+    function checkRoundComplete() {
+      const minAsked = Math.min(...Array.from(askedQuestions.values()));
+      const allQuestionsAsked = Array.from(askedQuestions.values())
+              .every(count => count === minAsked + 1);
+
+      if (allQuestionsAsked) {
+        updateProgress();
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex !== undefined) {
+        askedQuestions.set(currentQuestionIndex, askedQuestions.get(currentQuestionIndex) + 1);
+        questionsAnswered++;
+        document.getElementById('questionsStatus').textContent = `${questionsAnswered} van ${questions.length}`;
+        updateProgress();
+        checkRoundComplete();
+      }
+
+      currentQuestionIndex = selectNextQuestion();
+      document.getElementById('question').textContent = questions[currentQuestionIndex].question;
+      document.getElementById('answer').style.display = 'none';
+      // Verwijder: setInterval(updateProgress, 1000);
+    }
+
+    // Start de quiz
+    initializeQuestions();
+</script>
