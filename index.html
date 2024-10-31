@@ -26,6 +26,12 @@
             width: 100%;
             max-width: 900px;
         }
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
 
         h1 {
             color: #333;
@@ -542,11 +548,7 @@
         },
         {
             question: "Wat is de MoSCoW-methode?",
-            answer: "De MoSCoW-methode is een techniek om de vereisten van een project te prioriteren. Hierbij worden de vereisten ingedeeld en toegewezen met de letters M, S, C of W."
-        },
-        {
-            question: "Waar staat elke letter in MoSCoW voor?",
-            answer: "<li>M: Must have</li><li>S: Should have</li><li>C: Could have</li><li>W: Would like to have but won't this time</li>"
+            answer: "De MoSCoW-methode is een techniek om de vereisten van een project te prioriteren. Hierbij worden de vereisten ingedeeld en toegewezen met de letters M, S, C of W. <li>M: Must have</li><li>S: Should have</li><li>C: Could have</li><li>W: Would like to have but won't this time</li>"
         },
         {
             question: "Must have this",
@@ -630,7 +632,7 @@
         },
         {
             "question": "Wat zijn de stappen om tot een database te komen?",
-            "answer": "1. Requirements Analyse: Begrijp de behoeften van de gebruikers. 2. Conceptueel ontwerp: Creëer een hoog niveau conceptueel model met een ERD. 3. Logisch ontwerp: Vertaal het conceptuele model naar een gestructureerde database-indeling. 4. Fysiek ontwerp: Richt je op de implementatie in het gekozen DBMS. 5. Implementatie: Maak de tabellen aan en definieer relaties. 6. Data Loading: Laad echte gegevens in de database."
+            "answer": "<ul><li>Requirements Analyse: Begrijp de behoeften van de gebruikers.</li><li>Conceptueel ontwerp: Creëer een hoog niveau conceptueel model met een ERD.</li><li>Logisch ontwerp: Vertaal het conceptuele model naar een gestructureerde database-indeling.</li><li>Fysiek ontwerp: Richt je op de implementatie in het gekozen DBMS.</li><li>Implementatie: Maak de tabellen aan en definieer relaties.</li><li>Data Loading: Laad echte gegevens in de database.</li></ul>"
         },
         {
             "question": "Wat is een ERD?",
@@ -642,7 +644,7 @@
         },
         {
             "question": "Wat zijn de verschillende notatiestijlen voor een ERD?",
-            "answer": "De notatiestijlen voor een ERD omvatten Chen’s Database Notation, Crow’s Foot Database Notation, UML Database Notation, IDEF1X Database Notation, Bachman, Martin en hybride vormen."
+            "answer": "<ul><li>Chen’s Database Notation</li><li>Crow’s Foot Database Notation</li><li>UML Database Notation</li><li>IDEF1X Database Notation</li><li>Bachman</li><li>Martin</li><li>Hybride vormen</li></ul>"
         },
         {
             "question": "Wat is een database?",
@@ -654,7 +656,7 @@
         },
         {
             "question": "Wat zijn de datatypes in een database?",
-            "answer": "Generieke datatypes zijn: string (tekst), integer (gehele getallen), float (komma getallen), bool (waar/niet-waar), date (datum), time (tijd) en datetime (datum en uur)."
+            "answer": "<ul><li>string (tekst)</li><li>integer (gehele getallen)</li><li>float (komma getallen)</li><li>bool (waar/niet-waar)</li><li>date (datum)</li><li>time (tijd)</li><li>datetime (datum en uur)</li></ul>"
         },
         {
             "question": "Wat zijn samengestelde gegevens?",
@@ -969,8 +971,8 @@
             "answer": "Een enumeratie is een verzameling gedefinieerde constanten. <img src=/Resources/enumeration.JPG alt='Enumeratie'>"
         },
         {
-            "question": "Wat is een abstracte klasse? vb.: <i>Figure {abstract}</i>",
-            "answer": "Een abstracte klasse is een klasse waarvan geen instanties kunnen bestaan en die dient om een gemeenschappelijke interface te definiëren. De klasse wordt cursief geschreven en het woord abstract kan tussen haakjes achter de klassenaam worden geplaatst. <img src=/Resources/Abstract%20class.JPG alt='Abstracte Klasse'>"
+            "question": "Wat is een abstracte klasse? ",
+            "answer": "Een abstracte klasse is een klasse waarvan geen instanties kunnen bestaan en die dient om een gemeenschappelijke interface te definiëren. De klasse wordt cursief geschreven en het woord abstract kan tussen haakjes achter de klassenaam worden geplaatst. <img src=/Resources/Abstract%20class.JPG alt='Abstracte Klasse'> vb.: <i>Figure {abstract}</i>",
         },
         {
             "question": "Wat gebeurt er als een klasse één abstracte methode heeft?",
@@ -1013,8 +1015,8 @@
             "answer": "<img src=/Resources/Polymorphism%20Java.JPG alt='Polymorphism Java'> The class Pet has a method <i>makeNoise()</i>, suppose classes Cat and Dog also have this. => overriding public class Pet { public void makeNoise() { System.out.println(\"!\"); } } public class Cat extends Pet { public void makeNoise() { System.out.println(\"Meow!\"); } } public class Dog extends Pet { public void makeNoise() { System.out.println(\"Woof!\"); } }"
         },
         {
-            "question": "Abstract classes Java",
-            "answer": "If a class has an abstract method, the class itself becomes abstract. You must then also put the word abstract in the header of the class: <img src=/Resources/Abstract%20classes%20Java.JPG alt='Abstract classes Java'> public abstract class Pet { public abstract void makeNoise(); } You cannot create instances of an abstract class. Abstract classes act as superclasses for subclasses that override the abstract method and provide a body."
+            "question": "Abstracte klassen in Java",
+            "answer": "Als een klasse een abstracte methode heeft, wordt de klasse zelf abstract. Je moet dan ook het woord abstract in de header van de klasse opnemen: <img src=/Resources/Abstract%20classes%20Java.JPG alt='Abstracte klassen Java'> public abstract class Pet { public abstract void makeNoise(); } Je kunt geen instanties maken van een abstracte klasse. Abstracte klassen fungeren als superklassen voor subklassen die de abstracte methode overschrijven en een implementatie geven."
         },
         {
             "question": "Advanced concepts in a class Java",
@@ -1042,11 +1044,11 @@
         },
         {
             "question": "Welke elementen worden weergegeven in een sequentiediagram?",
-            "answer": "<li><img src=/Resources/Sequence%20Diagram.JPG alt='Sequence Diagram'></li><li><strong>Actor</strong>: Een externe entiteit die interactie heeft met het systeem.</li><li><strong>Object (deelnemers)</strong>: Klassen en objecten die deelnemen aan de interactie. (blokken bovenaan.)</li><li><strong>Lifeline</strong>: De verticale stippellijn die de levensduur van een object aangeeft.</li><li><strong>Bericht</strong>: Communicatie tussen objecten, weergegeven als pijlen.</li><li><strong>Retourbericht</strong>: Optioneel bericht dat de terugkeer van een operatie aangeeft, weergegeven als pijlen met stippellijn.</li><li><strong>Frame</strong>: Bevat geconditioneerde of herhaalde interacties, extra kader rondom deel van diagram (opt, alt, loop, par, ref).</li><li><strong>Activatiebox</strong>: Geeft aan dat een object actief is tijdens een bepaalde periode (verticale balkje).</li><li><strong>Tijdbeperking</strong>: Beperkingen op de volgorde of timing van gebeurtenissen.</li><li><strong>Recursie of zelfrecursie, creatie en verwijdering</strong>: Geeft aan wanneer een object zichzelf aanroept, nieuwe objecten creëert of verwijdert.</li>"
+            "answer": "<li><img src=/Resources/Sequence%20Diagram.JPG alt='Sequence Diagram'></li><li>Actor: Een externe entiteit die interactie heeft met het systeem.</li><li>Object (deelnemers): Klassen en objecten die deelnemen aan de interactie. (blokken bovenaan.)</li><li>Lifeline: De verticale stippellijn die de levensduur van een object aangeeft.</li><li>Bericht: Communicatie tussen objecten, weergegeven als pijlen.</li><li>Retourbericht: Optioneel bericht dat de terugkeer van een operatie aangeeft, weergegeven als pijlen met stippellijn.</li><li>Frame: Bevat geconditioneerde of herhaalde interacties, extra kader rondom deel van diagram (opt, alt, loop, par, ref).</li><li>Activatiebox: Geeft aan dat een object actief is tijdens een bepaalde periode (verticale balkje).</li><li>Tijdbeperking: Beperkingen op de volgorde of timing van gebeurtenissen.</li><li>Recursie of zelfrecursie, creatie en verwijdering: Geeft aan wanneer een object zichzelf aanroept, nieuwe objecten creëert of verwijdert.</li>"
         },
         {
             "question": "Wat is het verschil tussen synchrone en asynchrone berichten in een sequentiediagram?",
-            "answer": "<li><strong>Synchrone berichten</strong>: Worden weergegeven met een volle pijl met een gevulde punt. De oproepende object wacht tot het andere object klaar is met verwerken. De voltooiing van een synchrone oproep wordt aangegeven met het retourbericht (optioneel).</li><li><strong>Asynchrone berichten</strong>: Worden weergegeven met een volle pijl met een open punt. De oproepende object wacht niet tot het andere object klaar is met verwerken en er wordt niets \"teruggestuurd\".</li>"
+            "answer": "<li>Synchrone berichten: Worden weergegeven met een volle pijl met een gevulde punt. De oproepende object wacht tot het andere object klaar is met verwerken. De voltooiing van een synchrone oproep wordt aangegeven met het retourbericht (optioneel).</li><li>Asynchrone berichten: Worden weergegeven met een volle pijl met een open punt. De oproepende object wacht niet tot het andere object klaar is met verwerken en er wordt niets \"teruggestuurd\".</li>"
         },
         {
             "question": "Hoe benoem je berichten tussen objecten in een sequentiediagram?",
@@ -1054,19 +1056,19 @@
         },
         {
             "question": "Wat zijn frames in een sequentiediagram en welke soorten frames bestaan er?",
-            "answer": "<div>Frames worden gebruikt om aan te geven dat bepaalde berichten alleen onder bepaalde voorwaarden plaatsvinden. De belangrijkste soorten frames zijn:</div><ul><li><strong>opt-frame</strong>: Bevat berichten die alleen worden uitgevoerd als een bepaalde [voorwaarde] (guard) waar is, wat een optionele flow vertegenwoordigt.</li><li><strong>alt-frame</strong>: Bevat meerdere delen gescheiden door een gebroken lijn, elk met een eigen [voorwaarde]. Alleen de berichten in het deel met de waarachtige [voorwaarde] worden uitgevoerd, wat alternatieve flows vertegenwoordigt.</li><li><strong>loop-frame</strong>: Bevat berichten die meerdere keren achter elkaar kunnen voorkomen. De iteratieconditie staat in de [voorwaarde], bijvoorbeeld <code>Loop [4]</code> of <code>Loop [f incomingFlights]</code>.</li><li><strong>break fragment</strong>: Wordt uitgevoerd wanneer de voorwaarde is voldaan en de omliggende interactie wordt dan niet verder uitgevoerd.</li><li><strong>parallel flow</strong>: Geeft aan dat meerdere dingen tegelijkertijd kunnen gebeuren, wat helpt om verwarring te voorkomen bij het tekenen.</li><li><strong>referentie</strong>: Als een sequentiediagram verwijst naar een ander sequentiediagram, wordt dit aangegeven door een referentie.</li></ul>"
+            "answer": "<div>Frames worden gebruikt om aan te geven dat bepaalde berichten alleen onder bepaalde voorwaarden plaatsvinden. De belangrijkste soorten frames zijn:</div><ul><li>opt-frame: Bevat berichten die alleen worden uitgevoerd als een bepaalde [voorwaarde] (guard) waar is, wat een optionele flow vertegenwoordigt.</li><li>alt-frame: Bevat meerdere delen gescheiden door een gebroken lijn, elk met een eigen [voorwaarde]. Alleen de berichten in het deel met de waarachtige [voorwaarde] worden uitgevoerd, wat alternatieve flows vertegenwoordigt.</li><li>loop-frame: Bevat berichten die meerdere keren achter elkaar kunnen voorkomen. De iteratieconditie staat in de [voorwaarde], bijvoorbeeld <code>Loop [4]</code> of <code>Loop [f incomingFlights]</code>.</li><li>break fragment: Wordt uitgevoerd wanneer de voorwaarde is voldaan en de omliggende interactie wordt dan niet verder uitgevoerd.</li><li>parallel flow: Geeft aan dat meerdere dingen tegelijkertijd kunnen gebeuren, wat helpt om verwarring te voorkomen bij het tekenen.</li><li>referentie: Als een sequentiediagram verwijst naar een ander sequentiediagram, wordt dit aangegeven door een referentie.</li></ul>"
         },
         {
             "question": "Hoe modelleer je Creatie in een sequentiediagram?",
-            "answer": "<strong>Creatie</strong>: Wordt weergegeven door een pijl die niet naar de lifeline gaat, maar naar het rechthoekje dat het nieuwe object vertegenwoordigt. <img src=/Resources/Creatie.JPG alt='Creatie'>"
+            "answer": "Creatie: Wordt weergegeven door een pijl die niet naar de lifeline gaat, maar naar het rechthoekje dat het nieuwe object vertegenwoordigt. <img src=/Resources/Creatie.JPG alt='Creatie'>"
         },
         {
             "question": "Hoe modelleer je Recursie of zelfrecursie in een sequentiediagram?",
-            "answer": "<strong>Recursie of zelfrecursie</strong>: Wordt weergegeven door een pijl die terugwijst naar hetzelfde object, wat aangeeft dat het object een operatie aanroept op zichzelf. <img src=/Resources/Recursie%20sequence.JPG alt='Recursie'>"
+            "answer": "Recursie of zelfrecursie: Wordt weergegeven door een pijl die terugwijst naar hetzelfde object, wat aangeeft dat het object een operatie aanroept op zichzelf. <img src=/Resources/Recursie%20sequence.JPG alt='Recursie'>"
         },
         {
             "question": "Hoe modelleer je Verwijdering in een sequentiediagram?",
-            "answer": "<strong>Verwijdering</strong>: Wordt aangegeven met een groot, dik kruis op de lifeline van het object, wat de verwijdering of deactivering van het object aangeeft. <img src=/Resources/Verwijdering.JPG alt='Verwijdering'>"
+            "answer": "Verwijdering: Wordt aangegeven met een groot, dik kruis op de lifeline van het object, wat de verwijdering of deactivering van het object aangeeft. <img src=/Resources/Verwijdering.JPG alt='Verwijdering'>"
         },
         {
             "question": "Wat is een activatiebox in een sequentiediagram en wat betekent het?",
@@ -1074,7 +1076,7 @@
         },
         {
             "question": "Hoe geef je voorwaarden en herhalingen weer in een sequentiediagram?",
-            "answer": "<img src=/Resources/Iteration%20voorwaarden.JPG alt='Iteratie Voorwaarden'> <li><strong>Voorwaarden</strong>: Worden weergegeven met een [guard] in een frame, zoals een opt-frame of alt-frame, die aangeeft onder welke voorwaarden de berichten binnen het frame worden uitgevoerd.</li><li><strong>Herhalingen (loops)</strong>: Worden weergegeven met een loop-frame waarin de [guard] de iteratieconditie specificeert, zoals <code>Loop [inneemVluchten]</code>. Dit geeft aan dat de berichten binnen het frame meerdere keren kunnen worden uitgevoerd afhankelijk van de conditie.</li>"
+            "answer": "<img src=/Resources/Iteration%20voorwaarden.JPG alt='Iteratie Voorwaarden'> <li>Voorwaarden: Worden weergegeven met een [guard] in een frame, zoals een opt-frame of alt-frame, die aangeeft onder welke voorwaarden de berichten binnen het frame worden uitgevoerd.</li><li>Herhalingen (loops): Worden weergegeven met een loop-frame waarin de [guard] de iteratieconditie specificeert, zoals <code>Loop [inneemVluchten]</code>. Dit geeft aan dat de berichten binnen het frame meerdere keren kunnen worden uitgevoerd afhankelijk van de conditie.</li>"
         },
         {
             "question": "Wanneer gebruik je een alternatieve flow (alt-frame) in een sequentiediagram?",
@@ -1134,27 +1136,19 @@
         },
         {
             "question": "Welke elementen bevat een state diagram?",
-            "answer": "<li><strong>Staten:</strong> Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li><strong>Transities:</strong> Veranderingen van de ene staat naar de andere.</li>"
-        },
-        {
-            "question": "Wat zijn de initiële en finale staat in een state diagram?",
-            "answer": "<li><strong>Initiële staat:</strong> De begintoestand van het systeem of object.</li><li><strong>Finale staat:</strong> De eindtoestand waarin het systeem of object zich bevindt wanneer het proces is voltooid.</li><li><img src=/Resources/initiële%20en%20finale%20staat.JPG alt='Initiële en Finale Staat'></li>"
+            "answer": "<li>Staten: Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li>Transities: Veranderingen van de ene staat naar de andere.</li>"
         },
         {
             "question": "Wat zijn de drie types activiteiten in een state diagram?",
-            "answer": "<img src=/Resources/activiteiten.JPG alt='Activiteiten'><br><li><strong>Ingangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li><strong>Doelactiviteiten:</strong> Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li><strong>Uitgangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
-        },
-        {
-            "question": "Wat is een transitie en hoe wordt deze genoteerd in een state diagram?",
-            "answer": "<li><strong>Transitie:</strong> Verandering van de ene staat naar een andere, meestal als gevolg van een gebeurtenis.</li><li><strong>Zelftransitie:</strong> Een transitie waarbij het systeem of object binnen dezelfde staat blijft.</li><li><strong>Notatie:</strong> <code>gebeurtenisnaam (optionele parameters) [voorwaarde] / actie</code></li>"
+            "answer": "<img src=/Resources/activiteiten.JPG alt='Activiteiten'><br><li>Ingangsactiviteiten: Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li>Doelactiviteiten: Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li>Uitgangsactiviteiten: Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
         },
         {
             "question": "Wat zijn sub-staten en wat is het voordeel hiervan?",
-            "answer": "<li><strong>Sub-staten:</strong> Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li><strong>Voordeel:</strong> Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=/Resources/sub-staten.JPG alt='Sub-staten'></li>"
+            "answer": "<li>Sub-staten: Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li>Voordeel: Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=/Resources/sub-staten.JPG alt='Sub-staten'></li>"
         },
         {
             "question": "Welke stappen volg je bij het maken van een state diagram?",
-            "answer": "<li><strong>Identificeer de staten:</strong> Bepaal de verschillende staten waarin een object kan verkeren.</li><li><strong>Vind de transities:</strong> Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li><strong>Voeg start en eind staten toe:</strong> Indien nodig, voeg een initiële en finale staat toe.</li><li><strong>Voeg acties toe:</strong> Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li><strong>Voeg activiteiten toe:</strong> Identificeer activiteiten die in de staten plaatsvinden.</li><li><strong>Voeg overige informatie toe:</strong> Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li><strong>Itereer:</strong> Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
+            "answer": "<li>Identificeer de staten: Bepaal de verschillende staten waarin een object kan verkeren.</li><li>Vind de transities: Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li>Voeg start en eind staten toe: Indien nodig, voeg een initiële en finale staat toe.</li><li>Voeg acties toe: Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li>Voeg activiteiten toe: Identificeer activiteiten die in de staten plaatsvinden.</li><li>Voeg overige informatie toe: Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li>Itereer: Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
         },
         {
             "question": "Wat beschrijft een state diagram in UML?",
@@ -1162,31 +1156,31 @@
         },
         {
             "question": "Welke elementen bevat een state diagram?",
-            "answer": "<li><strong>Staten:</strong> Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li><strong>Transities:</strong> Veranderingen van de ene staat naar de andere.</li>"
+            "answer": "<li>Staten: Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li>Transities: Veranderingen van de ene staat naar de andere.</li>"
         },
         {
             "question": "Wat zijn de initiële en finale staat in een state diagram?",
-            "answer": "<li><strong>Initiële staat:</strong> De begintoestand van het systeem of object.</li><li><strong>Finale staat:</strong> De eindtoestand waarin het systeem of object zich bevindt wanneer het proces is voltooid.</li><li><img src=\"/Resources/initiële en finale staat.JPG\" alt='Initiële en Finale Staat'></li>"
+            "answer": "<li>Initiële staat: De begintoestand van het systeem of object.</li><li>Finale staat: De eindtoestand waarin het systeem of object zich bevindt wanneer het proces is voltooid.</li><li><img src=\"/Resources/initiële en finale staat.JPG\" alt='Initiële en Finale Staat'></li>"
         },
         {
             "question": "Wat zijn de drie types activiteiten in een state diagram?",
-            "answer": "<img src=\"/Resources/activiteiten.JPG\" alt='Activiteiten'><br><li><strong>Ingangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li><strong>Doelactiviteiten:</strong> Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li><strong>Uitgangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
+            "answer": "<img src=\"/Resources/activiteiten.JPG\" alt='Activiteiten'><br><li>Ingangsactiviteiten: Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li>Doelactiviteiten: Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li>Uitgangsactiviteiten: Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
         },
         {
             "question": "Wat is een transitie en hoe wordt deze genoteerd in een state diagram?",
-            "answer": "<li><strong>Transitie:</strong> Verandering van de ene staat naar een andere, meestal als gevolg van een gebeurtenis.</li><li><strong>Zelftransitie:</strong> Een transitie waarbij het systeem of object binnen dezelfde staat blijft.</li><li><strong>Notatie:</strong> <code>gebeurtenisnaam (optionele parameters) [voorwaarde] / actie</code></li>"
+            "answer": "<li>Transitie: Verandering van de ene staat naar een andere, meestal als gevolg van een gebeurtenis.</li><li>Zelftransitie: Een transitie waarbij het systeem of object binnen dezelfde staat blijft.</li><li>Notatie: <code>gebeurtenisnaam (optionele parameters) [voorwaarde] / actie</code></li>"
         },
         {
             "question": "Wat zijn sub-staten en wat is het voordeel hiervan?",
-            "answer": "<li><strong>Sub-staten:</strong> Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li><strong>Voordeel:</strong> Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=\"/Resources/sub-staten.JPG\" alt='Sub-staten'></li>"
+            "answer": "<li>Sub-staten: Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li>Voordeel: Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=\"/Resources/sub-staten.JPG\" alt='Sub-staten'></li>"
         },
         {
             "question": "Welke stappen volg je bij het maken van een state diagram?",
-            "answer": "<li><strong>Identificeer de staten:</strong> Bepaal de verschillende staten waarin een object kan verkeren.</li><li><strong>Vind de transities:</strong> Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li><strong>Voeg start en eind staten toe:</strong> Indien nodig, voeg een initiële en finale staat toe.</li><li><strong>Voeg acties toe:</strong> Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li><strong>Voeg activiteiten toe:</strong> Identificeer activiteiten die in de staten plaatsvinden.</li><li><strong>Voeg overige informatie toe:</strong> Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li><strong>Itereer:</strong> Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
+            "answer": "<li>Identificeer de staten: Bepaal de verschillende staten waarin een object kan verkeren.</li><li>Vind de transities: Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li>Voeg start en eind staten toe: Indien nodig, voeg een initiële en finale staat toe.</li><li>Voeg acties toe: Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li>Voeg activiteiten toe: Identificeer activiteiten die in de staten plaatsvinden.</li><li>Voeg overige informatie toe: Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li>Itereer: Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
         },
         {
             "question": "Welke UML-diagrammen worden gebruikt in de requirements fase?",
-            "answer": "<strong>use case diagram</strong>"
+            "answer": "use case diagram"
         },
         {
             "question": "Welke UML-diagrammen behoren tot de statische fase?",
@@ -1194,7 +1188,7 @@
         },
         {
             "question": "Welke UML-diagrammen vallen onder de dynamische categorie?",
-            "answer": "Het <strong>sequence diagram</strong>, <strong>state machine diagram</strong> en eventueel het <strong>activiteitendiagram</strong>."
+            "answer": "Het sequence diagram, state machine diagram en eventueel het activiteitendiagram."
         },
         {
             "question": "Welke diagrammen worden gebruikt in de implementatiefase?",
@@ -1214,51 +1208,47 @@
         },
         {
             "question": "Welke fasen zijn er in projectfasering?",
-            "answer": "<li><strong>Concept fase</strong> – Use case diagram.</li><li><strong>Analyse fase</strong> – Klassen diagram en sequence diagram.</li><li><strong>Design fase</strong> – State machine diagram en activiteitendiagram.</li><li><strong>Implementatie fase</strong>.</li>"
+            "answer": "<li>Concept fase – Use case diagram.</li><li>Analyse fase – Klassen diagram en sequence diagram.</li><li>Design fase – State machine diagram en activiteitendiagram.</li><li>Implementatie fase.</li>"
         },
         {
             "question": "Hoe worden deze fasen uitgevoerd in de watervalmethodiek versus iteratieve methodieken?",
-            "answer": "<li><strong>Watervalmethodiek</strong>: Fasen worden sequentieel uitgevoerd.</li><li><strong>Iteratieve methodieken</strong>: Kleine watervallen worden herhaaldelijk uitgevoerd in meerdere iteraties.</li>"
+            "answer": "<li>Watervalmethodiek: Fasen worden sequentieel uitgevoerd.</li><li>Iteratieve methodieken: Kleine watervallen worden herhaaldelijk uitgevoerd in meerdere iteraties.</li>"
         },
         {
             "question": "Wat wordt geanalyseerd tijdens de domeinanalyse en de applicatie- en implementatiefase?",
-            "answer": "<li><strong>Domeinanalyse</strong>: <strong>WAT</strong> het systeem doet.</li><li><strong>Applicatie- en implementatiefase</strong>: <strong>HOE</strong> het systeem werkt, inclusief computeraspecten.</li>"
+            "answer": "<li>Domeinanalyse: WAT het systeem doet.</li><li>Applicatie- en implementatiefase: HOE het systeem werkt, inclusief computeraspecten.</li>"
         },
         {
             "question": "Wat zijn de drie stappen voor verdere ontwikkeling van diagrammen tijdens de applicatie- en implementatiefase?",
-            "answer": "<li><strong>Integreren van informatie</strong> uit andere diagrammen in het klassen diagram.</li><li><strong>Verfijnen van bestaande klassen</strong> (toevoegen van diepte).</li><li><strong>Toevoegen van nieuwe klassen</strong> (uitbreiding in breedte).</li>"
+            "answer": "<li>Integreren van informatie uit andere diagrammen in het klassen diagram.</li><li>Verfijnen van bestaande klassen (toevoegen van diepte).</li><li>Toevoegen van nieuwe klassen (uitbreiding in breedte).</li>"
         },
         {
-            "question": "Hoe worden berichten uit sequence diagrams en state machine diagrams geïntegreerd in het klassen diagram?",
-            "answer": "Berichten worden geïntegreerd als <strong>operaties</strong> en <strong>return waarden</strong> in het klassen diagram."
-        },
-        {
-            "question": "Hoe beïnvloeden staten uit het state machine diagram het klassen diagram?",
-            "answer": "Staten worden geïntegreerd als <strong>attribuutwaarden</strong> van een object op een gegeven moment, en als <strong>pre- en post-condities</strong> voor de operaties."
+            "question": "Hoe worden berichten uit sequence diagrams en state machine diagrams geïntegreerd in het klassen diagram? ",
+            "answer": "Berichten worden geïntegreerd als operaties en return waarden in het klassen diagram. Staten worden geïntegreerd als attribuutwaarden van een object op een gegeven moment, en als pre- en post-condities voor de operaties"
         },
         {
             "question": "Wat moet gecontroleerd worden tussen sequence diagrams en klassen diagrammen?",
-            "answer": "Controleer of <strong>klassen en associaties kloppen</strong>, bijvoorbeeld dat verzenders (transmitters) de ontvangers (receivers) kunnen bereiken."
+            "answer": "Controleer of klassen en associaties kloppen, bijvoorbeeld dat verzenders (transmitters) de ontvangers (receivers) kunnen bereiken."
         },
         {
             "question": "Wat houdt het ontwerpen van associaties in klassen diagrammen in?",
-            "answer": "Het <strong>ontwerpen van navigatie</strong> tussen klassen."
+            "answer": "Het ontwerpen van navigatie tussen klassen."
         },
         {
             "question": "Welke aspecten zijn belangrijk bij het ontwerpen van attributen in het klassen diagram?",
-            "answer": "<li><strong>Type</strong> van het attribuut (bijvoorbeeld utility classes).</li><li><strong>Waardebereik</strong>.</li>"
+            "answer": "<li>Type van het attribuut (bijvoorbeeld utility classes).</li><li>Waardebereik.</li>"
         },
         {
             "question": "Wat staat MVC voor en welke technologieën worden genoemd voor een Java project?",
-            "answer": "MVC staat voor <strong>Model-View-Controller</strong>. Een voorbeeld Java project gebruikt <strong>Spring Boot</strong>, <strong>Thymeleaf</strong> en <strong>JPA</strong>."
+            "answer": "MVC staat voor Model-View-Controller. Een voorbeeld Java project gebruikt Spring Boot, Thymeleaf en JPA."
         },
         {
             "question": "Wat is de rol van de Controller in MVC?",
-            "answer": "De <strong>Controller</strong> verwerkt HTTP-verzoeken, toont nieuwe views, laadt en stuurt modellen, en scheidt de businesslogica van de schermimplementatie."
+            "answer": "De Controller verwerkt HTTP-verzoeken, toont nieuwe views, laadt en stuurt modellen, en scheidt de businesslogica van de schermimplementatie."
         },
         {
             "question": "Wat is het voordeel van het gebruik van JpaRepository in het project?",
-            "answer": "<strong>JpaRepository</strong> zorgt ervoor dat wijzigingen in objecten automatisch worden geïmplementeerd in de database, zonder dat je zelf database-operaties hoeft te schrijven."
+            "answer": "JpaRepository zorgt ervoor dat wijzigingen in objecten automatisch worden geïmplementeerd in de database, zonder dat je zelf database-operaties hoeft te schrijven."
         },
         {
             "question": "Wat is de definitie van een domeinmodel in de context van een applicatie?",
