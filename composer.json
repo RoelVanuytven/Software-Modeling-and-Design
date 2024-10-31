@@ -1,5 +1,5 @@
 {
-  "name": "HerhalingSoftwareModelingandDesign",
+  "name": "roel/herhaling",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -9,6 +9,7 @@
       "email": "email@example.com"
     }
   ],
-  "require": { "php": "^8.0"
+  "require": {
+    "php": "^8.0"
   }
 }
