@@ -320,7 +320,7 @@
         },
         {
             question: "Wat is de betekenis van \"extend\" in een use case?",
-            answer: "Het geeft aan dat extra gedrag wordt toegevoegd aan het gedrag van een use case. Dit extra gedrag wordt optioneel geïmplementeerd en gemodelleerd in een nieuwe use case. In het diagram wordt dit aangegeven door een onderbroken pijl met de stereotype <<extend>>.<img src=\"Extend.JPG\">"
+            answer: "Het geeft aan dat extra gedrag wordt toegevoegd aan het gedrag van een use case. Dit extra gedrag wordt optioneel geïmplementeerd en gemodelleerd in een nieuwe use case. In het diagram wordt dit aangegeven door een onderbroken pijl met de stereotype &quot;&lt;&lt;extend&gt;&gt;&quot;.<img src=/Resources/Extend.JPG alt='extend'>"
         },
         {
             question: "Wat betekent \"include\" in een use case?",
@@ -812,7 +812,458 @@
             "question": "Welke criteria moeten worden overwogen bij de keuze tussen supertype en subtype?",
             "answer": "<ul><li>Verschil in attributen: Bij een groot verschil in specifieke attributen is modelleren op subtype de voorkeur.</li><li>Verschil in relaties: Bij een groot verschil in relaties is modelleren op subtype de voorkeur.</li><li>Veranderende rollen: Als rollen in de tijd kunnen veranderen, is modelleren op supertype de voorkeur.</li><li>Belang van bedrijfsregels versus database stabiliteit: Als bedrijfsregels belangrijker zijn, is subtype de voorkeur; als stabiliteit belangrijker is, is supertype de voorkeur.</li></ul>"
         },
-
+        {
+            "question": "Wat zijn de modellering volwassenheidsniveaus?",
+            "answer": "<li>0: geen specificatie (zeer kleine projecten, anders kans op conflicten)</li><li>1: tekstuele specificaties (overeenkomst tussen ontwikkelaar en klant wat er gemaakt moet worden, kans op misverstanden)</li><li>2: tekst met diagrammen (minder misvattingen van tekst wanneer diagrammen toegevoegd worden)</li><li>3: modellen met tekst (diagrammen + tekst in pseudo code)</li><li>4: exacte modellen (1 groot model bestaande uit verschillende diagramen, 1 op 1 gelinkt met broncode)</li><li>5: alleen modellen (nergens textuele aanvullingen, niets voor interpretatie vatbaar: onbestaande)</li>"
+        },
+        {
+            "question": "Welke diagrammen zijn er in UML 2.x",
+            "answer": "<li>Use case diagram</li><li>Class diagram</li><li>Toestandmachine diagram</li><li>Sequentiediagram</li><li>Communicatiediagram</li><li>Activiteitendiagram</li><li>Componentendiagram</li><li>Implementatiediagram</li>"
+        },
+        {
+            "question": "Wat toont een use case diagram?",
+            "answer": "Het use case diagram toont hoe het systeem kan worden gebruikt door externe entiteiten zoals menselijke gebruiker <img src=/Resources/Use%20Case.JPG alt='Use Case Diagram'>"
+        },
+        {
+            "question": "Wat toont een class diagram?",
+            "answer": "Het class diagram toont de statische structuur van het softwaresysteem, weergegeven als klassen en hun relaties. <img src=/Resources/Class%20Diagram.JPG alt='Class Diagram'>"
+        },
+        {
+            "question": "Wat is het doel van een sequentiediagram?",
+            "answer": "Het sequentiediagram toont de volgorde in de tijd van de berichten die door het systeem worden verzonden en ontvangen. <img src=/Resources/Sequence%20Diagram.JPG alt='Sequence Diagram'>"
+        },
+        {
+            "question": "Wat toont een communicatiediagram?",
+            "answer": "Het communicatiediagram toont hoe de objecten samenwerken om een doel te bereiken. <img src=/Resources/Communication%20Diagram.JPG alt='Communication Diagram'>"
+        },
+        {
+            "question": "Wat is het doel van een activiteitendiagram?",
+            "answer": "Het activiteitendiagram toont de activiteiten die door een deel van het systeem worden uitgevoerd, inclusief eventuele parallelle activiteiten. <img src=/Resources/Activity%20Diagram.JPG alt='Activity Diagram'>"
+        },
+        {
+            "question": "Wat toont een toestandmachine diagram?",
+            "answer": "Het toestandmachine diagram toont de toestanden waarin een object zich kan bevinden tijdens zijn levenscyclus. <img src=/Resources/State%20Chart%20Machine%20Diagram.JPG alt='State Chart Machine Diagram'>"
+        },
+        {
+            "question": "Wat is de functie van een componentendiagram?",
+            "answer": "Het componentendiagram toont de verdeling van het gehele systeem in componenten en de relaties tussen die componenten. <img src=/Resources/Component%20Diagram.JPG alt='Component Diagram'>"
+        },
+        {
+            "question": "Wat is de functie van een Deployment diagram?",
+            "answer": "Het implementatiediagram toont hoe de softwarecomponenten worden gebruikt in een specifieke systeemconfiguratie. <img src=/Resources/Deployment%20diagram.JPG alt='Deployment Diagram'>"
+        },
+        {
+            "question": "Wat zijn de voordelen van OO-modellering?",
+            "answer": "<li>Modulaire structuur</li><li>Informatie verbergen -> lagere complexiteit</li><li>Hergebruik van code</li><li>Uitbreidbaar</li>"
+        },
+        {
+            "question": "Wat zijn de nadelen van OO-modellering?",
+            "answer": "<li>Moeilijker te ontwerpen en te programmeren</li><li>Voor kleinere programma's is klassieke programmering vaak efficiënter</li><li>Voor bepaalde doeleinden kunnen functionele talen en SQL geschikter zijn</li>"
+        },
+        {
+            "question": "4 Belangrijke OO-principe",
+            "answer": "<li>Encapsulatie</li><li>Abstractie</li><li>Overerving</li><li>Polymorfisme</li>"
+        },
+        {
+            "question": "Wat is Encapsulatie",
+            "answer": "Plaats gerelateerde gegevens en de bewerkingen die deze gegevens beïnvloeden in dezelfde klasse."
+        },
+        {
+            "question": "Wat is Abstractie",
+            "answer": "Het weglaten of verbergen van niet-relevante eigenschappen en de nadruk leggen op algemene gemeenschappelijke eigenschappen van objecten."
+        },
+        {
+            "question": "Wat is Overerving",
+            "answer": "Plaats gemeenschappelijke eigenschappen/gedragingen in een meer algemene bovenliggende klasse. Een kindklasse kan eigenschappen en methoden van de meer algemene bovenliggende klasse erven."
+        },
+        {
+            "question": "Wat is Polymorfisme",
+            "answer": "De gelijkenis van de interface van klassen en objecten, maar met verschillende implementaties."
+        },
+        {
+            "question": "Wat is een object?",
+            "answer": "Een object is iets dat een onafhankelijke bestaan leidt. Het kan worden gezien als een onafhankelijk ding, zoals een fysieke zaak (bijv. auto, stoel) of een concept (bijv. vakantie, bankrekening)."
+        },
+        {
+            "question": "Wat is een klasse?",
+            "answer": "Een klasse is een verzameling van objecten met overeenkomstige eigenschappen."
+        },
+        {
+            "question": "Wat zijn de relaties tussen klassen?",
+            "answer": "Associatie, geassocieerde klasse, aggregatie, compositie, generalisatie en erfelijkheid."
+        },
+        {
+            "question": "Wat is een associatie?",
+            "answer": "Een associatie is een structurele relatie tussen twee klassen, wat betekent dat een instantie van de ene klasse meestal gedurende zijn bestaan is geassocieerd met een instantie van de tweede klasse."
+        },
+        {
+            "question": "Hoe wordt een associatie weergegeven in een class diagram?",
+            "answer": "Een associatie wordt aangegeven door een doorlopende lijn tussen de twee klassen, met de naam van de associatie langs de lijn."
+        },
+        {
+            "question": "Wat is een reflexieve associatie?",
+            "answer": "Een reflexieve (recursieve) associatie is een relatie die een klasse met zichzelf heeft."
+        },
+        {
+            "question": "Wat is een gerichte associatie?",
+            "answer": "Een gerichte associatie is een associatie die in één richting navigeerbaar is, aangegeven door een doorlopende lijn met een pijl tussen de twee klassen. De klasse waar de pijl vertrekt kent de klasse waar de pijl aankomt, maar niet omgekeerd."
+        },
+        {
+            "question": "Wat is een rolattribuut?",
+            "answer": "Een object kan verschillende rollen spelen in verschillende associaties. De rolnaam is contextafhankelijk. <img src=/Resources/Role%20Attribute.JPG alt='Role Attribute'>"
+        },
+        {
+            "question": "Wat is een associatieklasse?",
+            "answer": "Een associatieklasse is een klasse die is geassocieerd met een associatie en wordt geïdentificeerd met de associatie. Een associatieklasse wordt aangeduid met een klassensymbool, dat met een stippellijn is verbonden aan de bijbehorende associatie. <img src=/Resources/Association%20class.JPG alt='Association Class'>"
+        },
+        {
+            "question": "Wat is aggregatie?",
+            "answer": "Aggregatie is een speciale soort associatie die aangeeft dat een of meer klassen \"deel van\" een andere klasse zijn. Het geheel en de delen kunnen onafhankelijk van elkaar bestaan. Bij aggregatie kan een onderdeel object bestaan zonder het geheel. <img src=/Resources/aggregatie.JPG alt='Aggregatie'>"
+        },
+        {
+            "question": "Wat is compositie?",
+            "answer": "Compositie is een speciale soort associatie die aangeeft dat een deel altijd toebehoort aan één geheel. Het onderdeel kan niet onafhankelijk van het geheel bestaan. <img src=/Resources/compositie.JPG alt='Compositie'>"
+        },
+        {
+            "question": "Wat is generalisatie en overerving?",
+            "answer": "Generalisatie is de classificatie van klassen op basis van identieke kenmerken. De nieuwe klasse wordt de ouderklasse genoemd, terwijl de klassen met dezelfde kenmerken de kindklassen zijn. Erfelijkheid betekent dat elke kindklasse alle eigenschappen van zijn ouderklasse erft. <img src=/Resources/inheritanceb.JPG alt='Generalisatie en Overerving'>"
+        },
+        {
+            "question": "Wat zijn de regels voor het benoemen van een klasse in een klassediagram?",
+            "answer": "De naam is altijd enkelvoudig, begint met een hoofdletter en gebruikt CamelCase."
+        },
+        {
+            "question": "Wat zijn de regels voor het benoemen van een attribute in een klassediagram?",
+            "answer": "De syntax is zichtbaarheid naam[multipliciteit] [:type][=standaardwaarde]"
+        },
+        {
+            "question": "Wat betekent dit zichtbaarheidssymbool +",
+            "answer": "publiek: is zichtbaar voor elke klasse die naar de klasse kan verwijzen."
+        },
+        {
+            "question": "Wat betekent dit zichtbaarheidssymbool -",
+            "answer": "privé: kan alleen door de klasse zelf worden gebruikt."
+        },
+        {
+            "question": "Wat betekent dit zichtbaarheidssymbool #",
+            "answer": "beschermd: is alleen zichtbaar voor de klasse zelf en voor alle subklassen EN ook zichtbaar binnen hetzelfde pakket."
+        },
+        {
+            "question": "Wat betekent dit zichtbaarheidssymbool ~",
+            "answer": "pakket: is alleen zichtbaar binnen hetzelfde pakket."
+        },
+        {
+            "question": "Wat is een afgeleid attribuut?",
+            "answer": "Een berekende waarde wordt weergegeven doordat er een / voor staat: Een afgeleid attribuut is een waarde die kan worden afgeleid van andere attributen, associaties of objecten en kan niet direct worden toegewezen."
+        },
+        {
+            "question": "Wat zijn de naming conventions voor methoden?",
+            "answer": "<li><code>isMethod</code>: voor ja/nee vragen.</li><li><code>setMethod</code>: voor het wijzigen van waarden.</li><li><code>getMethod</code>: voor het opvragen van waarden.</li><li><code>findMethod</code>: voor het ophalen van een enkel object.</li>"
+        },
+        {
+            "question": "Wat is het verschil tussen een statisch attribuut en een normaal attribuut?",
+            "answer": "Onderlijnd: Een statisch attribuut is gerelateerd aan de klasse zelf en heeft slechts één waarde voor al de objecten in de klasse, ongeacht het aantal instanties van de klasse. Intrest rate is voor al de RevolvingLoans hetzelfde <img src=/Resources/static%20attribute.JPG alt='Statisch Attribuut'>"
+        },
+        {
+            "question": "Wat is een enumeratie? <<enumeration>>",
+            "answer": "Een enumeratie is een verzameling gedefinieerde constanten. <img src=/Resources/enumeration.JPG alt='Enumeratie'>"
+        },
+        {
+            "question": "Wat is een abstracte klasse? vb.: <i>Figure {abstract}</i>",
+            "answer": "Een abstracte klasse is een klasse waarvan geen instanties kunnen bestaan en die dient om een gemeenschappelijke interface te definiëren. De klasse wordt cursief geschreven en het woord abstract kan tussen haakjes achter de klassenaam worden geplaatst. <img src=/Resources/Abstract%20class.JPG alt='Abstracte Klasse'>"
+        },
+        {
+            "question": "Wat gebeurt er als een klasse één abstracte methode heeft?",
+            "answer": "De klasse wordt een abstracte klasse en de kindklassen zijn verplicht deze methode te implementeren."
+        },
+        {
+            "question": "Kan een abstracte klasse gewone methoden bevatten?",
+            "answer": "Ja, een abstracte klasse kan gewone, concrete methoden bevatten."
+        },
+        {
+            "question": "Wat is een interface?",
+            "answer": "Een interface beschrijft hoe instanties van een klasse die de interface implementeren, toegankelijk kunnen worden gemaakt door andere objecten. <img src=/Resources/interface.JPG alt='Interface'> &quot;&lt;&lt;interface&gt;&gt;&quot; Mobile: Dit is een interface genaamd \"Mobile\". Bevat één methode: <code>+ride()</code>. De cirkel (O) rechtsboven geeft aan dat dit een interface is. Dit definieert een contract dat implementerende klassen moeten volgen. DrawerUnit: Dit is een klasse die rechts van de interface staat. De gebroken lijn met holle pijl wijst op implementatie van de interface. Car: Een klasse die de Mobile interface implementeert. De gebroken lijn met holle pijl wijst op implementatie van de interface. Dit betekent dat Car verplicht is om de <code>ride()</code> methode te implementeren. Bicycle: Heeft een cirkel (O) aan de rechterkant met label \"Mobile\". Dit suggereert dat Bicycle een mobiel object is of mobiliteit bezit."
+        },
+        {
+            "question": "Kan een interface zelf worden geïnstantieerd?",
+            "answer": "Nee, een interface wordt nooit zelf geïnstantieerd."
+        },
+        {
+            "question": "Wat is het verschil tussen een interface en een abstracte klasse?",
+            "answer": "Een interface is een contract voor het gedrag van klassen, terwijl een abstracte klasse ook implementatie kan bevatten en attributen kan hebben."
+        },
+        {
+            "question": "Klasse naar Java voorbeeld 1",
+            "answer": "<img src=/Resources/Klasse%20naar%20Java%20voorbeeld%201.JPG alt='Klasse naar Java voorbeeld 1'>"
+        },
+        {
+            "question": "multiplicity vertalen naar Java",
+            "answer": "In veel gevallen heeft een klasse niet één, maar veel meer verwijzingen naar objecten van een andere klasse. <img src=/Resources/multiplicity.JPG alt='Multiplicity'> public class Team { private ArrayList<Player> playerList; ... }"
+        },
+        {
+            "question": "Association to Java",
+            "answer": "Every mother has one or more children. Every child has a mother. <img src=/Resources/Association%20to%20Java.JPG alt='Association to Java'> public class Mother { private ArrayList<Child> children; ... } public class Child { private Mother mother; ... }"
+        },
+        {
+            "question": "Inheritance Java",
+            "answer": "<img src=/Resources/Inheritance%20Java.JPG alt='Inheritance Java'> In Java, inheritance is indicated by <i>extends</i>, for example: public class Cat <b>extends</b> Pet { }"
+        },
+        {
+            "question": "Polymorphism Java",
+            "answer": "<img src=/Resources/Polymorphism%20Java.JPG alt='Polymorphism Java'> The class Pet has a method <i>makeNoise()</i>, suppose classes Cat and Dog also have this. => overriding public class Pet { public void makeNoise() { System.out.println(\"!\"); } } public class Cat extends Pet { public void makeNoise() { System.out.println(\"Meow!\"); } } public class Dog extends Pet { public void makeNoise() { System.out.println(\"Woof!\"); } }"
+        },
+        {
+            "question": "Abstract classes Java",
+            "answer": "If a class has an abstract method, the class itself becomes abstract. You must then also put the word abstract in the header of the class: <img src=/Resources/Abstract%20classes%20Java.JPG alt='Abstract classes Java'> public abstract class Pet { public abstract void makeNoise(); } You cannot create instances of an abstract class. Abstract classes act as superclasses for subclasses that override the abstract method and provide a body."
+        },
+        {
+            "question": "Advanced concepts in a class Java",
+            "answer": "<img src=/Resources/Advanced%20concepts%20in%20a%20class%20Java.JPG alt='Advanced concepts in a class Java'> public class Loan { public static double interestRate; public double creditLimit; private ArrayList<double> withdrawings; protected static void newRate(double interest){..} void open(){..} public void redeem(double amount){..} public void withdraw(double amount) {..} private double getRemaining() {..} }"
+        },
+        {
+            "question": "Interface Java",
+            "answer": "<img src=/Resources/Interface%20Java.JPG alt='Interface Java'> public interface ActionListener { public void actionPerformed( ActionEvent e ); } public class ButtonHandler implements ActionListener { public void actionPerformed( ActionEvent e ) { } } In Java is een interface een soort klasse met alleen abstracte methoden. In een interface hoef je het woord abstract niet voor de methode te zetten. Alle methoden van een interface zijn per definitie abstract. Een klasse die een interface realiseert moet aan alle abstracte methoden van de interface een body geven."
+        },
+        {
+            "question": "Loose coupling Java",
+            "answer": "<img src=/Resources/Loose%20coupling%20Java.JPG alt='Loose coupling Java'> public class Drawingpanel { private ArrayList<Shape> shapeList; public void paintComponent(Graphics g){ .... ...shapeList[i].draw(g)...; ... } } De Drawingpanel bevat een lijst van vormen die getekend moeten worden. De Drawingpanel weet niet welke vormen getekend moeten worden, het weet alleen dat het objecten zijn die de Shape-interface implementeren (= objecten met de statische type Shape). En Drawingpanel weet dat al deze objecten de methode draw() implementeren. Drawingpanel werkt met Shape en niet direct met Rectangle, Circle, Triangle. Er is een losse koppeling tussen de Drawingpanel en de concrete klassen."
+        },
+        {
+            "question": "Enumeration Java",
+            "answer": "<img src=/Resources/Enumeration%20Java.JPG alt='Enumeration Java'> public enum Gender { male, female }"
+        },
+        {
+            "question": "Dependency Java",
+            "answer": "<img src=/Resources/Dependency%20Java.JPG alt='Dependency Java'> public class Invoice{ public void printDate() { Date today = new Date(); System.out.println(today); } } Een wat lossere vorm van een relatie tussen objecten (en dus klassen) is een afhankelijkheid. Deze ontstaat wanneer een bepaalde methode van klasse A een object van klasse B nodig heeft. De methode kan een referentie naar dat object krijgen via een parameter. De methode kan het object ook zelf aanmaken. In UML geef je een afhankelijkheid aan met een gestippelde pijl."
+        },
+        {
+            "question": "Wat is een sequentiediagram en hoe is het gestructureerd?",
+            "answer": "Een sequentiediagram is een UML-diagram dat de interacties tussen objecten in een systeem in een tijdlijn weergeeft. De tijd begint bovenaan en loopt aflopend naar beneden om de volgorde van interacties en gebeurtenissen te markeren."
+        },
+        {
+            "question": "Welke elementen worden weergegeven in een sequentiediagram?",
+            "answer": "<li><img src=/Resources/Sequence%20Diagram.JPG alt='Sequence Diagram'></li><li><strong>Actor</strong>: Een externe entiteit die interactie heeft met het systeem.</li><li><strong>Object (deelnemers)</strong>: Klassen en objecten die deelnemen aan de interactie. (blokken bovenaan.)</li><li><strong>Lifeline</strong>: De verticale stippellijn die de levensduur van een object aangeeft.</li><li><strong>Bericht</strong>: Communicatie tussen objecten, weergegeven als pijlen.</li><li><strong>Retourbericht</strong>: Optioneel bericht dat de terugkeer van een operatie aangeeft, weergegeven als pijlen met stippellijn.</li><li><strong>Frame</strong>: Bevat geconditioneerde of herhaalde interacties, extra kader rondom deel van diagram (opt, alt, loop, par, ref).</li><li><strong>Activatiebox</strong>: Geeft aan dat een object actief is tijdens een bepaalde periode (verticale balkje).</li><li><strong>Tijdbeperking</strong>: Beperkingen op de volgorde of timing van gebeurtenissen.</li><li><strong>Recursie of zelfrecursie, creatie en verwijdering</strong>: Geeft aan wanneer een object zichzelf aanroept, nieuwe objecten creëert of verwijdert.</li>"
+        },
+        {
+            "question": "Wat is het verschil tussen synchrone en asynchrone berichten in een sequentiediagram?",
+            "answer": "<li><strong>Synchrone berichten</strong>: Worden weergegeven met een volle pijl met een gevulde punt. De oproepende object wacht tot het andere object klaar is met verwerken. De voltooiing van een synchrone oproep wordt aangegeven met het retourbericht (optioneel).</li><li><strong>Asynchrone berichten</strong>: Worden weergegeven met een volle pijl met een open punt. De oproepende object wacht niet tot het andere object klaar is met verwerken en er wordt niets \"teruggestuurd\".</li>"
+        },
+        {
+            "question": "Hoe benoem je berichten tussen objecten in een sequentiediagram?",
+            "answer": "De berichten worden benoemd vanuit een intern perspectief als bevelende acties op de ontvanger, meestal in de gebiedende wijs. De afzender is dominant en de ontvanger moet gehoorzamen. Bijvoorbeeld, gebruik namen zoals <code>verzendBericht()</code> in plaats van passieve vormen."
+        },
+        {
+            "question": "Wat zijn frames in een sequentiediagram en welke soorten frames bestaan er?",
+            "answer": "<div>Frames worden gebruikt om aan te geven dat bepaalde berichten alleen onder bepaalde voorwaarden plaatsvinden. De belangrijkste soorten frames zijn:</div><ul><li><strong>opt-frame</strong>: Bevat berichten die alleen worden uitgevoerd als een bepaalde [voorwaarde] (guard) waar is, wat een optionele flow vertegenwoordigt.</li><li><strong>alt-frame</strong>: Bevat meerdere delen gescheiden door een gebroken lijn, elk met een eigen [voorwaarde]. Alleen de berichten in het deel met de waarachtige [voorwaarde] worden uitgevoerd, wat alternatieve flows vertegenwoordigt.</li><li><strong>loop-frame</strong>: Bevat berichten die meerdere keren achter elkaar kunnen voorkomen. De iteratieconditie staat in de [voorwaarde], bijvoorbeeld <code>Loop [4]</code> of <code>Loop [f incomingFlights]</code>.</li><li><strong>break fragment</strong>: Wordt uitgevoerd wanneer de voorwaarde is voldaan en de omliggende interactie wordt dan niet verder uitgevoerd.</li><li><strong>parallel flow</strong>: Geeft aan dat meerdere dingen tegelijkertijd kunnen gebeuren, wat helpt om verwarring te voorkomen bij het tekenen.</li><li><strong>referentie</strong>: Als een sequentiediagram verwijst naar een ander sequentiediagram, wordt dit aangegeven door een referentie.</li></ul>"
+        },
+        {
+            "question": "Hoe modelleer je Creatie in een sequentiediagram?",
+            "answer": "<strong>Creatie</strong>: Wordt weergegeven door een pijl die niet naar de lifeline gaat, maar naar het rechthoekje dat het nieuwe object vertegenwoordigt. <img src=/Resources/Creatie.JPG alt='Creatie'>"
+        },
+        {
+            "question": "Hoe modelleer je Recursie of zelfrecursie in een sequentiediagram?",
+            "answer": "<strong>Recursie of zelfrecursie</strong>: Wordt weergegeven door een pijl die terugwijst naar hetzelfde object, wat aangeeft dat het object een operatie aanroept op zichzelf. <img src=/Resources/Recursie%20sequence.JPG alt='Recursie'>"
+        },
+        {
+            "question": "Hoe modelleer je Verwijdering in een sequentiediagram?",
+            "answer": "<strong>Verwijdering</strong>: Wordt aangegeven met een groot, dik kruis op de lifeline van het object, wat de verwijdering of deactivering van het object aangeeft. <img src=/Resources/Verwijdering.JPG alt='Verwijdering'>"
+        },
+        {
+            "question": "Wat is een activatiebox in een sequentiediagram en wat betekent het?",
+            "answer": "<img src=/Resources/activatiebox.JPG alt='Activatiebox'> Een activatiebox geeft aan dat een object actief is gedurende een bepaalde periode, bijvoorbeeld tijdens de uitvoering van een operatie. Dit wordt weergegeven door een witte staaf langs de lifeline, die de periode aangeeft waarin het object direct of indirect acties uitvoert, bijvoorbeeld via het aanroepen van een andere operatie."
+        },
+        {
+            "question": "Hoe geef je voorwaarden en herhalingen weer in een sequentiediagram?",
+            "answer": "<img src=/Resources/Iteration%20voorwaarden.JPG alt='Iteratie Voorwaarden'> <li><strong>Voorwaarden</strong>: Worden weergegeven met een [guard] in een frame, zoals een opt-frame of alt-frame, die aangeeft onder welke voorwaarden de berichten binnen het frame worden uitgevoerd.</li><li><strong>Herhalingen (loops)</strong>: Worden weergegeven met een loop-frame waarin de [guard] de iteratieconditie specificeert, zoals <code>Loop [inneemVluchten]</code>. Dit geeft aan dat de berichten binnen het frame meerdere keren kunnen worden uitgevoerd afhankelijk van de conditie.</li>"
+        },
+        {
+            "question": "Wanneer gebruik je een alternatieve flow (alt-frame) in een sequentiediagram?",
+            "answer": "Een alternatieve flow wordt gebruikt wanneer er meerdere mogelijke scenario's zijn die kunnen plaatsvinden, afhankelijk van bepaalde voorwaarden. Elk deel van het alt-frame heeft een eigen [guard] en de berichten binnen elk deel worden alleen uitgevoerd als de corresponderende [guard] waar is. Dit helpt bij het modelleren van verschillende uitkomsten van een use case."
+        },
+        {
+            "question": "Hoe geef je aan dat een sequentiediagram verwijst naar een ander sequentiediagram?",
+            "answer": "<img src=/Resources/sequentiediagram%20verwijst.JPG alt='Sequentiediagram Verwijst'> Als een sequentiediagram een verwijzing maakt naar een ander sequentiediagram, wordt dit aangegeven door een referentie binnen het frame. Dit helpt bij het structureren van complexe interacties door ze op te splitsen in beheersbare delen."
+        },
+        {
+            "question": "Welke voordelen bieden patronen?",
+            "answer": "Patronen zijn onderhoudbaar omdat ze standaard en direct herkenbaar zijn, herbruikbaar omdat ze complete oplossingen bieden die herhaald kunnen worden, en breed toepasbaar omdat ze onafhankelijk zijn van specifieke programmeertalen."
+        },
+        {
+            "question": "Wat zijn de eigenschappen van een patroon?",
+            "answer": "Een patroon bestaat uit een naam voor communicatie, een probleemomschrijving dat het oplost, een oplossing die beschrijft hoe het probleem wordt aangepakt, en de gevolgen van het toepassen van het patroon."
+        },
+        {
+            "question": "Wat is het Creator-patroon in GRASP?",
+            "answer": "Het Creator-patroon bepaalt dat klasse A verantwoordelijk is voor het aanmaken van instanties van klasse B als klasse A objecten van klasse B bevat, registreert, intensief gebruikt, of de benodigde gegevens heeft om klasse B te maken. <img src=/Resources/Creator.JPG alt='Creator'> public class Bike{ private Wheel wheel; private Frame frame; public Bike(int wheelW, int frameL){ this.wheel = new Wheel(wheelW); this.frame = new Frame(frameL); } public class Wheel{ private int width; public Wheel(int width){ this.width = width; } public class Frame{ private int length; public Frame(int length){ this.length = length; } }"
+        },
+        {
+            "question": "Noem twee situaties waarin een klasse A verantwoordelijk moet zijn voor het aanmaken van objecten van klasse B volgens het Creator-patroon.",
+            "answer": "Klasse A moet verantwoordelijk zijn voor het aanmaken van klasse B als A objecten van B bevat of als A objecten van B intensief gebruikt."
+        },
+        {
+            "question": "Wat is het Expert-patroon in GRASP?",
+            "answer": "Het Expert-patroon stelt dat verantwoordelijkheden moeten worden toegewezen aan de informatie-expert, de klasse die de benodigde informatie bezit om die verantwoordelijkheid uit te voeren. public class Bike{ private Wheel wheel; private Frame frame; Public Bike(int wheelW, int frameL){ this.wheel = new Wheel(wheelW); this.frame = new Frame(frameL); } Omdat Bike binnen zichzelf de objecten Wheel en Frame aanmaakt, moet het beschikken over de kennis en de benodigde gegevens (zoals wielbreedte en framelengte) om deze objecten correct te produceren."
+        },
+        {
+            "question": "Wat is het doel van het lage koppeling-principe in GRASP? Low Coupling",
+            "answer": "Het doel is om verantwoordelijkheden zodanig toe te wijzen dat klassen zo weinig mogelijk afhankelijk zijn van andere klassen, waardoor de impact van veranderingen wordt verminderd. <img src=/Resources/Low%20coupling%20-%20polymorphism.JPG alt='Low Coupling'> public class Drawing{ private ArrayList<Figure> figureList = new ArrayList<>(); public Drawing(){} public void addFigure(Figure f) { figureList.add(f); } public double getSurface(){ double surface = 0.0; for(Figure f : figureList){ surface += f.getSurface(); } return surface; } } public class Square implements Figure{ private int side; public Square(int side){ this.side = side; } public double getSurface(){ return side*side; } } public class Triangle implements Figure { private double base; private double height; public Triangle(double base, double height){ this.base = base; this.height = height; } public double getSurface(){ return base*height/2; } } public interface Figure{ public double getSurface(); }"
+        },
+        {
+            "question": "Waarvoor staat GRASP?",
+            "answer": "GRASP staat voor General Responsibility Assignment Software Patterns."
+        },
+        {
+            "question": "Wat is het doel van hoge samenhang in het ontwerp van klassen?",
+            "answer": "Het doel is om klassen begrijpelijk en onderhoudbaar te houden door verantwoordelijkheden te organiseren zodat ze sterk gerelateerd en consistent zijn binnen de klasse."
+        },
+        {
+            "question": "Wat doet de controller in GRASP",
+            "answer": "<li>De UI stuurt klantverzoeken door naar de controller</li><li>De controller stuurt verzoeken door naar de juiste systeemobjecten</li><li>Dit vermindert de koppeling van de UI aan systeemobjecten</li><li>Dit stelt de UI in staat te veranderen zonder het systeem te beïnvloeden</li><li>De UI mag nooit logica afhandelen of als controller fungeren (beperkt hergebruik)</li><li>De UI mag geen systeemgebeurtenissen afhandelen</li><li>Als je controller overbelast is, maak er dan meerdere die verschillende delen van de UI vertegenwoordigen</li>"
+        },
+        {
+            "question": "Wat zijn de tekenen van een overbelaste controller in een systeem?",
+            "answer": "Een overbelaste controller heeft meestal slechts één controller die te veel systeemgebeurtenissen ontvangt, voert taken zelf uit in plaats van te delegeren, en heeft veel attributen en informatie over het systeem of domein."
+        },
+        {
+            "question": "Wat zijn mogelijke oplossingen voor overbelaste controllers?",
+            "answer": "Voeg extra controllers toe om de verantwoordelijkheid te verdelen en ontwerp de controllers om werk te delegeren aan geschikte domeinklassen in plaats van alles zelf te doen."
+        },
+        {
+            "question": "Wat beschrijft een state diagram in UML?",
+            "answer": "Een state diagram beschrijft hoe een systeem zich gedraagt en reageert op gebeurtenissen, of hoe een enkel object zich gedraagt en reageert op gebeurtenissen."
+        },
+        {
+            "question": "Welke elementen bevat een state diagram?",
+            "answer": "<li><strong>Staten:</strong> Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li><strong>Transities:</strong> Veranderingen van de ene staat naar de andere.</li>"
+        },
+        {
+            "question": "Wat zijn de initiële en finale staat in een state diagram?",
+            "answer": "<li><strong>Initiële staat:</strong> De begintoestand van het systeem of object.</li><li><strong>Finale staat:</strong> De eindtoestand waarin het systeem of object zich bevindt wanneer het proces is voltooid.</li><li><img src=/Resources/initiële%20en%20finale%20staat.JPG alt='Initiële en Finale Staat'></li>"
+        },
+        {
+            "question": "Wat zijn de drie types activiteiten in een state diagram?",
+            "answer": "<img src=/Resources/activiteiten.JPG alt='Activiteiten'><br><li><strong>Ingangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li><strong>Doelactiviteiten:</strong> Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li><strong>Uitgangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
+        },
+        {
+            "question": "Wat is een transitie en hoe wordt deze genoteerd in een state diagram?",
+            "answer": "<li><strong>Transitie:</strong> Verandering van de ene staat naar een andere, meestal als gevolg van een gebeurtenis.</li><li><strong>Zelftransitie:</strong> Een transitie waarbij het systeem of object binnen dezelfde staat blijft.</li><li><strong>Notatie:</strong> <code>gebeurtenisnaam (optionele parameters) [voorwaarde] / actie</code></li>"
+        },
+        {
+            "question": "Wat zijn sub-staten en wat is het voordeel hiervan?",
+            "answer": "<li><strong>Sub-staten:</strong> Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li><strong>Voordeel:</strong> Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=/Resources/sub-staten.JPG alt='Sub-staten'></li>"
+        },
+        {
+            "question": "Welke stappen volg je bij het maken van een state diagram?",
+            "answer": "<li><strong>Identificeer de staten:</strong> Bepaal de verschillende staten waarin een object kan verkeren.</li><li><strong>Vind de transities:</strong> Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li><strong>Voeg start en eind staten toe:</strong> Indien nodig, voeg een initiële en finale staat toe.</li><li><strong>Voeg acties toe:</strong> Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li><strong>Voeg activiteiten toe:</strong> Identificeer activiteiten die in de staten plaatsvinden.</li><li><strong>Voeg overige informatie toe:</strong> Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li><strong>Itereer:</strong> Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
+        },
+        {
+            "question": "Wat beschrijft een state diagram in UML?",
+            "answer": "Een state diagram beschrijft hoe een systeem zich gedraagt en reageert op gebeurtenissen, of hoe een enkel object zich gedraagt en reageert op gebeurtenissen."
+        },
+        {
+            "question": "Welke elementen bevat een state diagram?",
+            "answer": "<li><strong>Staten:</strong> Een logische naam voor de staat waarin een systeem of object zich op een bepaald moment bevindt.</li><li><strong>Transities:</strong> Veranderingen van de ene staat naar de andere.</li>"
+        },
+        {
+            "question": "Wat zijn de initiële en finale staat in een state diagram?",
+            "answer": "<li><strong>Initiële staat:</strong> De begintoestand van het systeem of object.</li><li><strong>Finale staat:</strong> De eindtoestand waarin het systeem of object zich bevindt wanneer het proces is voltooid.</li><li><img src=\"/Resources/initiële en finale staat.JPG\" alt='Initiële en Finale Staat'></li>"
+        },
+        {
+            "question": "Wat zijn de drie types activiteiten in een state diagram?",
+            "answer": "<img src=\"/Resources/activiteiten.JPG\" alt='Activiteiten'><br><li><strong>Ingangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt betreden vanuit een andere staat.</li><li><strong>Doelactiviteiten:</strong> Worden één of meerdere keren uitgevoerd terwijl het systeem of object zich in de staat bevindt.</li><li><strong>Uitgangsactiviteiten:</strong> Uitgevoerd wanneer een staat wordt verlaten en overgaat naar een andere staat.</li>"
+        },
+        {
+            "question": "Wat is een transitie en hoe wordt deze genoteerd in een state diagram?",
+            "answer": "<li><strong>Transitie:</strong> Verandering van de ene staat naar een andere, meestal als gevolg van een gebeurtenis.</li><li><strong>Zelftransitie:</strong> Een transitie waarbij het systeem of object binnen dezelfde staat blijft.</li><li><strong>Notatie:</strong> <code>gebeurtenisnaam (optionele parameters) [voorwaarde] / actie</code></li>"
+        },
+        {
+            "question": "Wat zijn sub-staten en wat is het voordeel hiervan?",
+            "answer": "<li><strong>Sub-staten:</strong> Staten die onderdeel zijn van een overkoepelende staat. Bijvoorbeeld, 'full' en 'half-full' kunnen sub-staten zijn van de staat 'drinkable'.</li><li><strong>Voordeel:</strong> Je hoeft niet dezelfde transitie vanuit elke sub-staat te tekenen naar dezelfde andere staat, wat het diagram eenvoudiger maakt.</li><li><img src=\"/Resources/sub-staten.JPG\" alt='Sub-staten'></li>"
+        },
+        {
+            "question": "Welke stappen volg je bij het maken van een state diagram?",
+            "answer": "<li><strong>Identificeer de staten:</strong> Bepaal de verschillende staten waarin een object kan verkeren.</li><li><strong>Vind de transities:</strong> Voor elke gebeurtenis, identificeer de bijbehorende transitie(s).</li><li><strong>Voeg start en eind staten toe:</strong> Indien nodig, voeg een initiële en finale staat toe.</li><li><strong>Voeg acties toe:</strong> Bepaal welke acties worden uitgevoerd tijdens de transities.</li><li><strong>Voeg activiteiten toe:</strong> Identificeer activiteiten die in de staten plaatsvinden.</li><li><strong>Voeg overige informatie toe:</strong> Bijvoorbeeld voorwaarden (guards) of andere relevante details.</li><li><strong>Itereer:</strong> Herzie en verfijn de bovenstaande stappen om het diagram te optimaliseren.</li>"
+        },
+        {
+            "question": "Welke UML-diagrammen worden gebruikt in de requirements fase?",
+            "answer": "<strong>use case diagram</strong>"
+        },
+        {
+            "question": "Welke UML-diagrammen behoren tot de statische fase?",
+            "answer": "Het klassen diagram."
+        },
+        {
+            "question": "Welke UML-diagrammen vallen onder de dynamische categorie?",
+            "answer": "Het <strong>sequence diagram</strong>, <strong>state machine diagram</strong> en eventueel het <strong>activiteitendiagram</strong>."
+        },
+        {
+            "question": "Welke diagrammen worden gebruikt in de implementatiefase?",
+            "answer": "Het component diagram en het deployment diagram."
+        },
+        {
+            "question": "Wat geeft een pijl tussen twee UML-diagrammen aan?",
+            "answer": "Een pijl geeft aan dat het tweede diagram informatie nodig heeft van het eerste diagram."
+        },
+        {
+            "question": "Wat betekent een stippellijnpijl tussen twee UML-diagrammen?",
+            "answer": "Het eerste diagram beïnvloedt het tweede diagram zonder dat onderdelen van het tweede diagram direct uit het eerste diagram komen."
+        },
+        {
+            "question": "Welk diagram is het centrale diagram in de methode en wordt door verschillende fasen heen ontwikkeld?",
+            "answer": "Het klassen diagram."
+        },
+        {
+            "question": "Welke fasen zijn er in projectfasering?",
+            "answer": "<li><strong>Concept fase</strong> – Use case diagram.</li><li><strong>Analyse fase</strong> – Klassen diagram en sequence diagram.</li><li><strong>Design fase</strong> – State machine diagram en activiteitendiagram.</li><li><strong>Implementatie fase</strong>.</li>"
+        },
+        {
+            "question": "Hoe worden deze fasen uitgevoerd in de watervalmethodiek versus iteratieve methodieken?",
+            "answer": "<li><strong>Watervalmethodiek</strong>: Fasen worden sequentieel uitgevoerd.</li><li><strong>Iteratieve methodieken</strong>: Kleine watervallen worden herhaaldelijk uitgevoerd in meerdere iteraties.</li>"
+        },
+        {
+            "question": "Wat wordt geanalyseerd tijdens de domeinanalyse en de applicatie- en implementatiefase?",
+            "answer": "<li><strong>Domeinanalyse</strong>: <strong>WAT</strong> het systeem doet.</li><li><strong>Applicatie- en implementatiefase</strong>: <strong>HOE</strong> het systeem werkt, inclusief computeraspecten.</li>"
+        },
+        {
+            "question": "Wat zijn de drie stappen voor verdere ontwikkeling van diagrammen tijdens de applicatie- en implementatiefase?",
+            "answer": "<li><strong>Integreren van informatie</strong> uit andere diagrammen in het klassen diagram.</li><li><strong>Verfijnen van bestaande klassen</strong> (toevoegen van diepte).</li><li><strong>Toevoegen van nieuwe klassen</strong> (uitbreiding in breedte).</li>"
+        },
+        {
+            "question": "Hoe worden berichten uit sequence diagrams en state machine diagrams geïntegreerd in het klassen diagram?",
+            "answer": "Berichten worden geïntegreerd als <strong>operaties</strong> en <strong>return waarden</strong> in het klassen diagram."
+        },
+        {
+            "question": "Hoe beïnvloeden staten uit het state machine diagram het klassen diagram?",
+            "answer": "Staten worden geïntegreerd als <strong>attribuutwaarden</strong> van een object op een gegeven moment, en als <strong>pre- en post-condities</strong> voor de operaties."
+        },
+        {
+            "question": "Wat moet gecontroleerd worden tussen sequence diagrams en klassen diagrammen?",
+            "answer": "Controleer of <strong>klassen en associaties kloppen</strong>, bijvoorbeeld dat verzenders (transmitters) de ontvangers (receivers) kunnen bereiken."
+        },
+        {
+            "question": "Wat houdt het ontwerpen van associaties in klassen diagrammen in?",
+            "answer": "Het <strong>ontwerpen van navigatie</strong> tussen klassen."
+        },
+        {
+            "question": "Welke aspecten zijn belangrijk bij het ontwerpen van attributen in het klassen diagram?",
+            "answer": "<li><strong>Type</strong> van het attribuut (bijvoorbeeld utility classes).</li><li><strong>Waardebereik</strong>.</li>"
+        },
+        {
+            "question": "Wat staat MVC voor en welke technologieën worden genoemd voor een Java project?",
+            "answer": "MVC staat voor <strong>Model-View-Controller</strong>. Een voorbeeld Java project gebruikt <strong>Spring Boot</strong>, <strong>Thymeleaf</strong> en <strong>JPA</strong>."
+        },
+        {
+            "question": "Wat is de rol van de Controller in MVC?",
+            "answer": "De <strong>Controller</strong> verwerkt HTTP-verzoeken, toont nieuwe views, laadt en stuurt modellen, en scheidt de businesslogica van de schermimplementatie."
+        },
+        {
+            "question": "Wat is het voordeel van het gebruik van JpaRepository in het project?",
+            "answer": "<strong>JpaRepository</strong> zorgt ervoor dat wijzigingen in objecten automatisch worden geïmplementeerd in de database, zonder dat je zelf database-operaties hoeft te schrijven."
+        },
+        {
+            "question": "Wat is de definitie van een domeinmodel in de context van een applicatie?",
+            "answer": "Een domeinmodel is de representatie van de werkelijkheid in je applicatie, inclusief de businesslogica. Het beschrijft de concepten, relaties en regels die relevant zijn voor het specifieke domein van de applicatie."
+        }
     ];
 
     let askedQuestions = new Map();
