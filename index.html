@@ -22,14 +22,14 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             margin: 0 auto;
-            padding: 30px; /* Verhoogde padding */
+            padding: 30px;
             width: 100%;
-            max-width: 900px; /* Verhoogde max-width */
+            max-width: 900px;
         }
 
         h1 {
             color: #333;
-            font-size: 2.2rem; /* Grotere lettergrootte */
+            font-size: 2.2rem;
             margin-bottom: 20px;
             text-align: center;
         }
@@ -39,7 +39,7 @@
         }
 
         h2 {
-            font-size: 1.5rem; /* Grotere lettergrootte */
+            font-size: 1.5rem;
             margin-bottom: 15px;
             color: #444;
         }
@@ -50,22 +50,23 @@
             padding: 15px;
             background-color: #e8f4f8;
             border-radius: 5px;
-            font-size: 1.1rem; /* Grotere lettergrootte */
+            font-size: 1.1rem;
             line-height: 1.5;
         }
 
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 24px;
+            padding: 15px 30px; /* Verhoogde padding */
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin: 5px;
-            font-size: 1.1rem; /* Grotere lettergrootte */
+            margin: 10px 5px; /* Aangepaste margins */
+            font-size: 1.2rem; /* Grotere lettergrootte */
             width: calc(100% - 10px);
-            max-width: 300px;
+            max-width: 400px; /* Verhoogde max-width */
             transition: background-color 0.3s ease;
+            min-height: 60px; /* Minimale hoogte toegevoegd */
         }
 
         button:hover {
@@ -77,7 +78,7 @@
             padding: 15px;
             background-color: #f8f8f8;
             border-radius: 5px;
-            font-size: 1rem; /* Grotere lettergrootte */
+            font-size: 1rem;
         }
 
         .progress {
@@ -98,22 +99,22 @@
         /* Responsive design voor verschillende schermgroottes */
         @media screen and (min-width: 768px) {
             .container {
-                padding: 40px; /* Verhoogde padding */
+                padding: 40px;
             }
 
             h1 {
-                font-size: 2.5rem; /* Grotere lettergrootte */
+                font-size: 2.5rem;
             }
 
             h2 {
-                font-size: 1.8rem; /* Grotere lettergrootte */
+                font-size: 1.8rem;
             }
 
             button {
                 width: auto;
                 margin: 10px;
+                min-height: 50px; /* Aangepaste minimale hoogte voor desktop */
             }
-
         }
 
         @media screen and (max-width: 480px) {
@@ -126,21 +127,24 @@
             }
 
             h1 {
-                font-size: 1.8rem; /* Grotere lettergrootte */
+                font-size: 1.8rem;
             }
 
             h2 {
-                font-size: 1.3rem; /* Grotere lettergrootte */
+                font-size: 1.3rem;
             }
 
             .answer-container {
                 padding: 10px;
-                font-size: 1rem; /* Grotere lettergrootte */
+                font-size: 1rem;
             }
 
             button {
-                padding: 10px 20px;
-                font-size: 1rem; /* Grotere lettergrootte */
+                padding: 15px 25px; /* Grotere padding voor mobiel */
+                font-size: 1.2rem; /* Grotere lettergrootte voor mobiel */
+                margin: 10px 0; /* Aangepaste margins voor mobiel */
+                width: 100%; /* Volledige breedte op mobiel */
+                min-height: 70px; /* Grotere minimale hoogte voor mobiel */
             }
         }
 
@@ -615,7 +619,200 @@
         {
             question: "Example Weighted Decision Matrix",
             answer: "<img src=/Resources/Weighted%20Decision%20Matrix.JPG alt='Weighted Decision Matrix'>"
-        }
+        },
+        {
+            "question": "Wat is datamodellering?",
+            "answer": "Datamodellering is een essentiële stap in het proces van gegevensbeheer en -analyse. Het helpt bij het organiseren, structureren en begrijpen van gegevens, zodat ze effectief kunnen worden gebruikt voor verschillende zakelijke doeleinden."
+        },
+        {
+            "question": "Waarom is datamodellering belangrijk?",
+            "answer": "Datamodellering is belangrijk omdat het de basis vormt voor applicatieontwikkeling, net zoals een kelder de basis vormt voor een huis. Het heeft een sterke invloed op het succes van een applicatie en het beheer van gegevens."
+        },
+        {
+            "question": "Wat zijn de stappen om tot een database te komen?",
+            "answer": "1. Requirements Analyse: Begrijp de behoeften van de gebruikers. 2. Conceptueel ontwerp: Creëer een hoog niveau conceptueel model met een ERD. 3. Logisch ontwerp: Vertaal het conceptuele model naar een gestructureerde database-indeling. 4. Fysiek ontwerp: Richt je op de implementatie in het gekozen DBMS. 5. Implementatie: Maak de tabellen aan en definieer relaties. 6. Data Loading: Laad echte gegevens in de database."
+        },
+        {
+            "question": "Wat is een ERD?",
+            "answer": "Een Entity Relationship Diagram (ERD) is een grafische representatie van de structuur van de database, waarbij de belangrijke entiteiten en de relaties tussen deze entiteiten worden weergegeven."
+        },
+        {
+            "question": "Wat zijn de componenten van een ERD?",
+            "answer": "Een ERD bestaat minimaal uit entiteiten, relaties en attributen. Entiteiten zijn definieerbare objecten, relaties zijn de verbindingen tussen entiteiten, en attributen zijn de eigenschappen van een entiteit."
+        },
+        {
+            "question": "Wat zijn de verschillende notatiestijlen voor een ERD?",
+            "answer": "De notatiestijlen voor een ERD omvatten Chen’s Database Notation, Crow’s Foot Database Notation, UML Database Notation, IDEF1X Database Notation, Bachman, Martin en hybride vormen."
+        },
+        {
+            "question": "Wat is een database?",
+            "answer": "Een database is een georganiseerde en gestructureerde verzameling van gegevens die elektronisch wordt opgeslagen en beheerd. Het doel is om gegevens efficiënt en betrouwbaar op te slaan, te organiseren en toegankelijk te maken."
+        },
+        {
+            "question": "Wat is een Database Management System (DBMS)?",
+            "answer": "Een DBMS is software die wordt gebruikt om een database aan te maken en te beheren. Bekende DBMS'en zijn Oracle, MySQL, SQL Server en MariaDB."
+        },
+        {
+            "question": "Wat zijn de datatypes in een database?",
+            "answer": "Generieke datatypes zijn: string (tekst), integer (gehele getallen), float (komma getallen), bool (waar/niet-waar), date (datum), time (tijd) en datetime (datum en uur)."
+        },
+        {
+            "question": "Wat zijn samengestelde gegevens?",
+            "answer": "Samengestelde gegevens zijn gegevensstructuren die uit meerdere elementen bestaan, zoals het combineren van voornaam en achternaam in één attribuut."
+        },
+        {
+            "question": "Wat zijn berekende gegevens?",
+            "answer": "Berekende gegevens zijn waarden die worden gegenereerd door een berekening op basis van andere gegevens in de database. Deze worden nooit opgeslagen in de database."
+        },
+        {
+            "question": "Wat betekent 'Nulls Allowed' en 'Nulls Not Allowed'?",
+            "answer": "'Nulls Allowed' betekent dat een attribuut nullwaarden kan bevatten, terwijl 'Nulls Not Allowed' betekent dat een attribuut een verplichte waarde moet hebben."
+        },
+        {
+            "question": "Wat zijn de kenmerken van een goed datamodel?",
+            "answer": "Duidelijk, logisch en efficiënt zijn, en moet de relaties tussen entiteiten goed weergeven."
+        },
+        {
+            "question": "Wat is het belang van het logisch ontwerp in datamodellering?",
+            "answer": "Het logisch ontwerp vertaalt het conceptuele model naar een gestructureerde en technisch haalbare database-indeling, wat essentieel is voor de implementatie."
+        },
+        {
+            "question": "Wat is de rol van een ERD in datamodellering?",
+            "answer": "Een ERD dient als communicatiemiddel tussen verschillende belanghebbenden en helpt bij het creëren van een goed georganiseerde, efficiënte en begrijpelijke database."
+        },
+        {
+            "question": "Wat zijn integriteitsregels?",
+            "answer": "Integriteitsregels zijn regels die worden toegepast op een database om de geldigheid, consistentie en nauwkeurigheid van de gegevens te waarborgen."
+        },
+        {
+            "question": "Welke soorten integriteitsregels zijn er?",
+            "answer": "Referentiële integriteit: Zorgt ervoor dat elke verwijzing naar een andere tabel geldig is. Unieke beperking: Zorgt ervoor dat een attribuut of combinatie van attributen unieke waarden bevat."
+        },
+        {
+            "question": "Wat is een primaire sleutel?",
+            "answer": "Een primaire sleutel (PK) is een attribuut of combinatie van attributen die unieke waarden bevat voor elk record in een database tabel."
+        },
+        {
+            "question": "Wat zijn de richtlijnen voor het kiezen van een primaire sleutel?",
+            "answer": "De PK moet uniek zijn. De PK mag geen waarde bevatten. De PK moet minimaal zijn. De PK mag geen null-waarde bevatten."
+        },
+        {
+            "question": "Wat is een surrogate key?",
+            "answer": "Een surrogate key is een kunstmatige, niet-inhoudelijke sleutel die specifiek wordt gemaakt om als primaire sleutel te dienen in een database-tabel."
+        },
+        {
+            "question": "Waarom worden surrogate keys gebruikt?",
+            "answer": "Ze bieden een robuuste en gestandaardiseerde manier om records te identificeren en relaties tussen tabellen vast te stellen."
+        },
+        {
+            "question": "Wat is een alternate key?",
+            "answer": "Een alternate key is een attribuut of combinatie van attributen die unieke waarden bevatten, net als de primaire sleutel, maar die ook wordt gebruikt om records te identificeren."
+        },
+        {
+            "question": "Hoe verschilt een alternate key van een primaire sleutel?",
+            "answer": "Er is slechts één primaire sleutel per tabel, terwijl er meerdere alternate keys kunnen zijn."
+        },
+        {
+            "question": "Wat zijn de verschillende soorten relaties in een ERD?",
+            "answer": "Eén op één: Een persoon heeft een identiteitsbewijs. Eén op veel: Een appartementsgebouw bestaat uit verschillende appartementen. Veel op veel: Een visser kan aan veel wedstrijden deelnemen en aan een wedstrijd kunnen vele vissers deelnemen. (tussentabel)"
+        },
+        {
+            "question": "Wat is een foreign key?",
+            "answer": "Een foreign key is een kolom of set kolommen in een tabel die verwijst naar de primaire sleutel van een andere tabel."
+        },
+        {
+            "question": "Wat is het doel van een foreign key?",
+            "answer": "Het legt een relatie tussen twee tabellen en helpt om referentiële integriteit af te dwingen."
+        },
+        {
+            "question": "Wat is een associatie entiteit?",
+            "answer": "Een associatie entiteit wordt gebruikt om een veel-op-veel relatie tussen twee tabellen te modelleren. Het bevat de vreemde sleutels van beide tabellen en fungeert als een brug tussen de twee tabellen."
+        },
+        {
+            "question": "Wat zijn enkele belangrijke punten van de ERD checklist?",
+            "answer": "Elke entiteit begint met een hoofdletter en is enkelvoudig. Elk attribuut is camelCase. Elke primaire sleutel is uniek, minimaal, mag geen waarde hebben, mag niet 0 zijn en staat bovenaan. Relaties zijn sequentieel genummerd. Een associatie entiteit bevat twee keer 1..1 optionaliteit. De FK is aan de * side van elke relatie. De FK bevat altijd de volledige PK van de 1 kant tabel. 1...1 betekent dat de FK aan de * kant is altijd NNA. 0...1 betekent dat de FK aan de * kant is altijd NA."
+        },
+        {
+            "question": "Voorbeeld code datamodel",
+            "answer": "<img src=/Resources/code%20data%20model.JPG alt='Code Data Model'>"
+        },
+        {
+            "question": "Wat zijn veelvoorkomende fouten bij het specificeren van vreemde sleutels?",
+            "answer": "Bij een verplichte relatie (1..1) moet de FK NNA zijn. Als een relatie (0..1) niet verplicht is, moet de FK NA zijn. Een FK die deel uitmaakt van de PK mag nooit leeg zijn."
+        },
+        {
+            "question": "Standardising an Attribute",
+            "answer": "<img src=/Resources/Standardising%20an%20Attribute.JPG alt='Standardising an Attribute'>"
+        },
+        {
+            "question": "DTC: Delete of Target Cascades",
+            "answer": "Het record met de corresponderende FK wordt ook verwijderd."
+        },
+        {
+            "question": "DTR: Delete of Target Restricte",
+            "answer": "Het record met de PK kan niet worden verwijderd zolang er records zijn met een overeenkomende FK."
+        },
+        {
+            "question": "DTN: Delete of Target Nullifies",
+            "answer": "De corresponderende FK wordt leeggemaakt."
+        },
+        {
+            "question": "Wat gebeurt er met een record met een FK als de PK wordt verwijderd onder DTC?",
+            "answer": "Het record met de corresponderende FK wordt ook verwijderd."
+        },
+        {
+            "question": "Waarom kan DTC gevaarlijk zijn?",
+            "answer": "Omdat je als gebruiker mogelijk onbedoeld records kunt verwijderen."
+        },
+        {
+            "question": "Wat is de restrictie bij DTR als je een record met een PK wilt verwijderen?",
+            "answer": "Het record met de PK kan niet worden verwijderd zolang er records zijn met een overeenkomende FK."
+        },
+        {
+            "question": "Hoe kun je een record met een PK verwijderen onder DTR?",
+            "answer": "Eerst moeten alle gekoppelde records met de FK worden verwijderd."
+        },
+        {
+            "question": "Wat gebeurt er met een FK onder DTN als de PK wordt verwijderd?",
+            "answer": "De corresponderende FK wordt leeggemaakt (null)."
+        },
+        {
+            "question": "Wat is een 'soft delete' en hoe werkt het?",
+            "answer": "Een 'soft delete' houdt in dat een record niet fysiek wordt verwijderd, maar inactief wordt gemaakt door een 'active' attribuut op false te zetten. Dit attribuut bepaalt of het record nog steeds mag worden gebruikt."
+        },
+        {
+            "question": "Wat moet er worden overwogen bij het vastleggen van tijdsinformatie? Time dimension",
+            "answer": "Men moet zich afvragen of alleen de actuele waarde moet worden vastgelegd of ook de waarden die in het verleden van toepassing waren. Er moet slechts één actuele waarde zijn, maar ook de waarden uit het verleden kunnen in een nieuwe entiteit worden vastgelegd."
+        },
+        {
+            "question": "Wat zijn de drie manieren om standaardwaarden en uitzonderingen bij te houden?",
+            "answer": "<ul><li>Alleen de standaardwaarde.</li><li>Alleen de uitzondering.</li><li>Zowel de standaardwaarde als de uitzondering.</li></ul>"
+        },
+        {
+            "question": "Wat is recursie in de context van datamodellering?",
+            "answer": "Recursie in datamodellering verwijst naar een situatie waarin een entiteit een relatie met zichzelf heeft. Dit kan een \"1 op veel\" of \"veel op veel\" relatie zijn. Voorbeeld manager, de persoon kan een manager zijn en ook nog veel managers boven zich hebben,...<img src=/Resources/Recursie.JPG alt='Recursie'>"
+        },
+        {
+            "question": "Wat is \"fixed coding\" in datamodellering?",
+            "answer": "Fixed coding verwijst naar het gebruik van meerdere vergelijkbare attributen binnen een entiteit die op het eerste gezicht vast lijken, maar in werkelijkheid flexibel gemodelleerd moeten worden. voorbeeld weekdagen dat er gewerkt mag worden, er kan later ook altijd nog zaterdag of zondag toegevoegd worden."
+        },
+        {
+            "question": "Wat is het verschil tussen een supertype en een subtype?",
+            "answer": "Een supertype is een algemene entiteit die gemeenschappelijke attributen bevat, terwijl subtypes specifieke attributen hebben die alleen voor die subtype gelden. Bijvoorbeeld, een \"Persoon\" is een supertype van \"Agenten\" en \"Klanten\". <img src=/Resources/Super-%20and%20Subtype.JPG alt='Super- and Subtype'>"
+        },
+        {
+            "question": "Wat zijn de eigenschappen van het modelleren op subtype?",
+            "answer": "Voordelen van modelleren op subtype zijn dat bedrijfsregels worden vastgesteld en dat er geen lege attributen of velden in een tabel zijn. Nadelen zijn dat het minder flexibel en stabiel is, en dat het zoeken naar alle supertype-verschijnselen meerdere entiteiten vereist."
+        },
+        {
+            "question": "Wat zijn de eigenschappen van het modelleren op supertype?",
+            "answer": "Voordelen van modelleren op supertype zijn flexibiliteit en eenvoud, omdat er minder entiteiten en relaties zijn. Nadelen zijn dat bedrijfsregels worden genegeerd en dat er lege velden in de tabel kunnen zijn."
+        },
+        {
+            "question": "Welke criteria moeten worden overwogen bij de keuze tussen supertype en subtype?",
+            "answer": "<ul><li>Verschil in attributen: Bij een groot verschil in specifieke attributen is modelleren op subtype de voorkeur.</li><li>Verschil in relaties: Bij een groot verschil in relaties is modelleren op subtype de voorkeur.</li><li>Veranderende rollen: Als rollen in de tijd kunnen veranderen, is modelleren op supertype de voorkeur.</li><li>Belang van bedrijfsregels versus database stabiliteit: Als bedrijfsregels belangrijker zijn, is subtype de voorkeur; als stabiliteit belangrijker is, is supertype de voorkeur.</li></ul>"
+        },
+
     ];
 
     let askedQuestions = new Map();

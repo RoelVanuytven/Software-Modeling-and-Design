@@ -1,0 +1,14 @@
+{
+  "name": "HerhalingSoftwareModelingandDesign",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Roel",
+      "email": "email@example.com"
+    }
+  ],
+  "require": { "php": "^8.0"
+  }
+}
